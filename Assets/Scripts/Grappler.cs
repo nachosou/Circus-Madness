@@ -1,23 +1,21 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class Grappler : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
-
     public Transform cam;
     public Transform grapplerTip;
     public LayerMask grappleable;
     public LineRenderer lineRenderer;
 
+    public float offSet;
     public float maxGrappleDistance;
     public float grappleDelay;
     public float grapplingSpeed;
-    [SerializeField] private AnimationCurve lerpCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    public float lerpDuration;
 
     private Vector3 grapplePoint;
-    float lerpLength;
     private float startTime;
 
     public float grapplingCoolDown;
@@ -27,28 +25,32 @@ public class Grappler : MonoBehaviour
 
     private bool grappling;
 
+    // Añadir una referencia al Rigidbody del jugador
+    private Rigidbody playerRigidbody;
+
     private void Start()
     {
-        startTime = Time.time;
+        // Asignar el Rigidbody del jugador
+        playerRigidbody = playerTransform.GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp(grappleKey)) 
+        if (Input.GetKeyUp(grappleKey))
         {
             StartGrapple();
         }
 
-        if (grapplingCoolDownTimer > 0) 
-        { 
+        if (grapplingCoolDownTimer > 0)
+        {
             grapplingCoolDownTimer -= Time.deltaTime;
         }
     }
 
     private void LateUpdate()
     {
-        if (grappling) 
-        { 
+        if (grappling)
+        {
             lineRenderer.SetPosition(0, grapplerTip.position);
         }
     }
@@ -60,11 +62,13 @@ public class Grappler : MonoBehaviour
         grappling = true;
 
         RaycastHit hitPoint;
-        if (Physics.Raycast(cam.position, cam.forward, out hitPoint, maxGrappleDistance, grappleable)) 
-        { 
-            grapplePoint = hitPoint.point;
+        if (Physics.Raycast(cam.position, cam.forward, out hitPoint, maxGrappleDistance, grappleable))
+        {
+            Vector3 surfaceNormal = hitPoint.normal;
+            grapplePoint = hitPoint.point - surfaceNormal * offSet;
 
-            lerpLength = Vector3.Distance(grapplerTip.position, grapplePoint);
+            // Desactivar el control de físicas del jugador durante el grappling
+            playerRigidbody.isKinematic = true;
 
             Invoke(nameof(ExecuteGrapple), grappleDelay);
         }
@@ -75,81 +79,47 @@ public class Grappler : MonoBehaviour
             Invoke(nameof(StopGrapple), grappleDelay);
         }
 
-        Invoke(nameof(StopGrapple), grappleDelay);
-
         lineRenderer.enabled = true;
         lineRenderer.SetPosition(1, grapplePoint);
     }
 
     private void ExecuteGrapple()
     {
-        float distCovered = (Time.time - startTime) * grapplingSpeed;
-
-        float fractionOfJourney = distCovered / lerpLength;
-
-        playerTransform.position = Vector3.Lerp(grapplerTip.position, grapplePoint, fractionOfJourney);
-        StartCoroutine(Lerp(5, HandleLerpPlayer));
-        StartCoroutine(EasedLerp(5, EaseInOut, HandleLerpPlayer));
-        StartCoroutine(CurvedLerp(5, lerpCurve, HandleLerpPlayer));
-
-        void HandleLerpPlayer(float lerp)
-        {
-            playerTransform.position = Vector3.Lerp(grapplerTip.position, grapplePoint, fractionOfJourney);
-        }
-
-        float EaseInOut(float t)
-        {
-            return -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
-        }
+        StartCoroutine(grappleCoroutine());
     }
-
 
     private void StopGrapple()
     {
         grappling = false;
-
         grapplingCoolDownTimer = grapplingCoolDown;
-
         lineRenderer.enabled = false;
+
+        // Reactivar el control de físicas del jugador
+        playerRigidbody.isKinematic = false;
     }
 
-    private static IEnumerator Lerp(float duration, Action<float> callback)
+    private IEnumerator grappleCoroutine()
     {
-        float t = 0;
-        do
+        float timer = 0f;
+        float startTime = Time.time;
+        Vector3 startPosition = playerTransform.position;
+
+        while (timer < lerpDuration)
         {
-            var lerp = t / duration;
-            //run logic with lerp
-            callback(lerp);
+            timer = Time.time - startTime;
+            playerTransform.position = Vector3.Lerp(startPosition, grapplePoint, timer / lerpDuration);
+
             yield return null;
-            t += Time.deltaTime;
-        } while (t < duration);
-    }
-    private static IEnumerator EasedLerp(float duration,Ease ease, Action<float> callback)
-    {
-        float t = 0;
-        do
-        {
-            var lerp = t / duration;
-            //run logic with lerp
-            var easedLerp = ease(lerp);
-            callback(lerp);
-            yield return null;
-            t += Time.deltaTime;
-        } while (t < duration);
-    }
-    private static IEnumerator CurvedLerp(float duration, AnimationCurve curve, Action<float> callback)
-    {
-        float t = 0;
-        do
-        {
-            var lerp = t / duration;
-            //run logic with lerp
-            var curvedLerp = curve.Evaluate(lerp);
-            callback(lerp);
-            yield return null;
-            t += Time.deltaTime;
-        } while (t < duration);
+        }
+
+        // Asegurar que la posición final sea exacta
+        playerTransform.position = grapplePoint;
+
+        // Reactivar el control del jugador y detener la velocidad del Rigidbody
+        playerRigidbody.isKinematic = false;
+        playerRigidbody.velocity = Vector3.zero;
+
+        // Detener el grappling visualmente
+        StopGrapple();
     }
 }
-public delegate float Ease(float t);
