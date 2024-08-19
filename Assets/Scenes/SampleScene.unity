@@ -576,6 +576,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   lineRenderer: {fileID: 1147845698}
+  offSet: 1
   maxGrappleDistance: 25
   grappleDelay: 0.01
   grapplingSpeed: 25

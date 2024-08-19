@@ -25,13 +25,9 @@ public class Grappler : MonoBehaviour
 
     private bool grappling;
 
-    // Añadir una referencia al Rigidbody del jugador
-    private Rigidbody playerRigidbody;
-
     private void Start()
     {
-        // Asignar el Rigidbody del jugador
-        playerRigidbody = playerTransform.GetComponent<Rigidbody>();
+
     }
 
     private void Update()
@@ -67,9 +63,6 @@ public class Grappler : MonoBehaviour
             Vector3 surfaceNormal = hitPoint.normal;
             grapplePoint = hitPoint.point - surfaceNormal * offSet;
 
-            // Desactivar el control de físicas del jugador durante el grappling
-            playerRigidbody.isKinematic = true;
-
             Invoke(nameof(ExecuteGrapple), grappleDelay);
         }
         else
@@ -93,9 +86,6 @@ public class Grappler : MonoBehaviour
         grappling = false;
         grapplingCoolDownTimer = grapplingCoolDown;
         lineRenderer.enabled = false;
-
-        // Reactivar el control de físicas del jugador
-        playerRigidbody.isKinematic = false;
     }
 
     private IEnumerator grappleCoroutine()
@@ -107,19 +97,13 @@ public class Grappler : MonoBehaviour
         while (timer < lerpDuration)
         {
             timer = Time.time - startTime;
-            playerTransform.position = Vector3.Lerp(startPosition, grapplePoint, timer / lerpDuration);
+
+            if (grappling)
+            {
+                playerTransform.position = Vector3.Lerp(startPosition, grapplePoint, timer / lerpDuration);
+            }
 
             yield return null;
         }
-
-        // Asegurar que la posición final sea exacta
-        playerTransform.position = grapplePoint;
-
-        // Reactivar el control del jugador y detener la velocidad del Rigidbody
-        playerRigidbody.isKinematic = false;
-        playerRigidbody.velocity = Vector3.zero;
-
-        // Detener el grappling visualmente
-        StopGrapple();
     }
 }
