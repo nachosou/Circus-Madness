@@ -759,6 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   groundDrag: 5
+  airDrag: 2
   jumpForce: 8
   jumpCooldown: 0.5
   airMultiplier: 0.4
@@ -812,10 +813,13 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 1024
-  wallrunForce: 25.5
+  wallrunForce: 16
   maxWallrunTime: 2
+  walljumpUpForce: 100
+  walljumpSideForce: 10
+  jumpKey: 32
   wallCheckDistance: 1
-  minJumpHeight: 2
+  minJumpHeight: 0.4
   orientation: {fileID: 808928755}
 --- !u!1 &649340760
 GameObject:

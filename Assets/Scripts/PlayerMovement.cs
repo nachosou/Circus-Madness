@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
 
     public float groundDrag;
+    public float airDrag;
 
     public float jumpForce;
     public float jumpCooldown;
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rb.drag = 0;
+            rb.drag = airDrag;
         }
     }
 
