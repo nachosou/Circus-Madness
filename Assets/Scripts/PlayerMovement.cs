@@ -13,7 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+    private Vector3 startPos;
+
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode reset = KeyCode.R;
 
     public float playerHeight;
     public LayerMask Ground;
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         readyToJump = true;
         rb.useGravity = false;
+        startPos = transform.position;
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
 
-        rb.AddForce(customGravity, ForceMode.Acceleration);
+        rb.AddForce(customGravity * Time.deltaTime, ForceMode.Acceleration);
 
         if (grounded) 
         { 
@@ -51,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.drag = airDrag;
+        }
+
+        if (Input.GetKey(reset)) 
+        { 
+            transform.position = startPos;
         }
     }
 
