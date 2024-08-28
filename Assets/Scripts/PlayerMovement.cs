@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float groundDrag;
     public float airDrag;
+    public Vector3 customGravity;
 
     public float jumpForce;
     public float jumpCooldown;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        rb.useGravity = false;
     }
 
     private void Update()
@@ -40,7 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
 
-        if(grounded) 
+        rb.AddForce(customGravity, ForceMode.Acceleration);
+
+        if (grounded) 
         { 
             rb.drag = groundDrag;
         }
