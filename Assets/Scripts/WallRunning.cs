@@ -115,7 +115,7 @@ public class WallRunning : MonoBehaviour
             wallForward = -wallForward;
         }
 
-        rb.AddForce(wallForward * wallrunForce, ForceMode.Force);
+        rb.AddForce((wallForward * wallrunForce) * Time.deltaTime, ForceMode.Force);
     }
 
     private void StopWallrun()
