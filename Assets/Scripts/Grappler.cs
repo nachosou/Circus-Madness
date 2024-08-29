@@ -8,6 +8,7 @@ public class Grappler : MonoBehaviour
     public Transform grapplerTip;
     public LayerMask grappleable;
     public LineRenderer lineRenderer;
+    public GameObject dot;
 
     public float offSet;
     public float maxGrappleDistance;
@@ -23,16 +24,15 @@ public class Grappler : MonoBehaviour
 
     public KeyCode grappleKey = KeyCode.Mouse1;
 
-    private bool grappling;
+    private bool isGrappling;
 
     private void Start()
     {
-
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp(grappleKey))
+        if (Input.GetKeyUp(grappleKey) && !isGrappling)
         {
             StartGrapple();
         }
@@ -41,11 +41,13 @@ public class Grappler : MonoBehaviour
         {
             grapplingCoolDownTimer -= Time.deltaTime;
         }
+
+        dot.transform.position = cam.position + cam.forward * maxGrappleDistance;
     }
 
     private void LateUpdate()
     {
-        if (grappling)
+        if (isGrappling)
         {
             lineRenderer.SetPosition(0, grapplerTip.position);
         }
@@ -55,7 +57,7 @@ public class Grappler : MonoBehaviour
     {
         if (grapplingCoolDownTimer > 0) return;
 
-        grappling = true;
+        isGrappling = true;
 
         RaycastHit hitPoint;
         if (Physics.Raycast(cam.position, cam.forward, out hitPoint, maxGrappleDistance, grappleable))
@@ -83,7 +85,7 @@ public class Grappler : MonoBehaviour
 
     private void StopGrapple()
     {
-        grappling = false;
+        isGrappling = false;
         grapplingCoolDownTimer = grapplingCoolDown;
         lineRenderer.enabled = false;
     }
@@ -91,19 +93,21 @@ public class Grappler : MonoBehaviour
     private IEnumerator grappleCoroutine()
     {
         float timer = 0f;
-        float startTime = Time.time;
         Vector3 startPosition = playerTransform.position;
+
+        isGrappling = true;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<PlayerMovement>().enabled = false;
 
         while (timer < lerpDuration)
         {
-            timer = Time.time - startTime;
-
-            if (grappling)
-            {
-                playerTransform.position = Vector3.Lerp(startPosition, grapplePoint, timer / lerpDuration);
-            }
+            timer += Time.deltaTime;
+            playerTransform.position = Vector3.Lerp(startPosition, grapplePoint, timer / lerpDuration);
 
             yield return null;
         }
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        isGrappling = false;
     }
 }

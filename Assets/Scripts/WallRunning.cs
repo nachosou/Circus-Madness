@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,14 +9,11 @@ public class WallRunning : MonoBehaviour
 
     public float wallrunForce;
     public float maxWallrunTime;
-    private float wallrunTimer;
-    private float wallrunSpeed;
     private bool wallRunning;
 
     public float walljumpUpForce;
     public float walljumpSideForce;
 
-    private float horizontalInput;
     private float verticalInput;
     public KeyCode jumpKey = KeyCode.Space;
 
@@ -63,7 +61,6 @@ public class WallRunning : MonoBehaviour
 
     private void StateMachine()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
         if ((isRunningInLeftWall || isRunningInRightWall) && verticalInput > 0 && HighEnough())
@@ -94,7 +91,6 @@ public class WallRunning : MonoBehaviour
 
     private void WallrunMovement()
     {
-        rb.useGravity = false;
         rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
 
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
@@ -115,16 +111,20 @@ public class WallRunning : MonoBehaviour
             wallForward = -wallForward;
         }
 
-        rb.AddForce((wallForward * wallrunForce) * Time.deltaTime, ForceMode.Force);
+        rb.AddForce((wallForward * wallrunForce) * Time.fixedDeltaTime, ForceMode.Force);
     }
 
     private void StopWallrun()
     {
         wallRunning = false;
-        rb.useGravity = true;
     }
 
     private void WallJump()
+    {
+        StartCoroutine(wallJumpCoroutine());
+    }
+
+    private IEnumerator wallJumpCoroutine() 
     {
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
 
@@ -133,6 +133,6 @@ public class WallRunning : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(forceToApply, ForceMode.Impulse);
 
-        Debug.Log("AAAAAAAAA");
+        yield return null;
     }
 }

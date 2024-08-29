@@ -46,17 +46,6 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
 
-        rb.AddForce(customGravity * Time.deltaTime, ForceMode.Acceleration);
-
-        if (grounded) 
-        { 
-            rb.drag = groundDrag;
-        }
-        else
-        {
-            rb.drag = airDrag;
-        }
-
         if (Input.GetKey(reset)) 
         { 
             transform.position = startPos;
@@ -66,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        rb.AddForce(customGravity * Time.fixedDeltaTime, ForceMode.Acceleration);
+
+        if (grounded)
+        {
+            rb.drag = groundDrag;
+        }
+        else
+        {
+            rb.drag = airDrag;
+        }
     }
 
     private void MyInput()
