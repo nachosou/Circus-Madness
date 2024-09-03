@@ -121,18 +121,12 @@ public class WallRunning : MonoBehaviour
 
     private void WallJump()
     {
-        StartCoroutine(wallJumpCoroutine());
-    }
-
-    private IEnumerator wallJumpCoroutine() 
-    {
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
 
         Vector3 forceToApply = transform.up * walljumpUpForce + wallNormal * walljumpSideForce;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        rb.AddForce(forceToApply, ForceMode.Impulse);
 
-        yield return null;
+        rb.AddForce(forceToApply, ForceMode.Impulse);
     }
 }
