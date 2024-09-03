@@ -66,18 +66,17 @@ public class GunSystem : MonoBehaviour
         readyToShoot = false;
 
         lineRenderer.SetPosition(0, shootPivot.transform.position);
-        lineRenderer.enabled = true;
 
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
         direction = pivot.forward;
 
-        //if (Physics.Raycast(pivot.position, direction, out rayHit, range))
-        //{
-        //    lineRenderer.enabled = true;
-        //    lineRenderer.SetPosition(1, rayHit.point);
-        //}
+        if (Physics.Raycast(pivot.position, direction, out rayHit, range))
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(1, rayHit.point);
+        }
 
         bulletsLeft--;
         bulletsShot--;
