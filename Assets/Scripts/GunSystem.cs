@@ -13,7 +13,6 @@ public class GunSystem : MonoBehaviour
     public float timeBetweenShots;
     public int magazineSize;
     public int bulletsPerTap;
-    public bool allowButtonHold;
 
     int bulletsLeft;
     int bulletsShot;
@@ -21,9 +20,8 @@ public class GunSystem : MonoBehaviour
     bool readyToShoot;
     bool reloading;
 
-    public GameObject scope;
-    public Transform attackPoint;
     public RaycastHit rayHit;
+    public KeyCode shootKey = KeyCode.Mouse0;
 
     Vector3 direction;
 
@@ -31,9 +29,16 @@ public class GunSystem : MonoBehaviour
     [SerializeField] GameObject shootPivot;
     [SerializeField] LineRenderer lineRenderer;
 
+    private void Start()
+    {
+        readyToShoot = true;
+        reloading = false;
+    }
+
     private void Update()
     {
         UpdateBulletsMagazine();
+        CheckShoot();
     }
 
     private void UpdateBulletsMagazine()
@@ -43,29 +48,36 @@ public class GunSystem : MonoBehaviour
 
     private void CheckShoot()
     {
-        if (readyToShoot && !reloading && bulletsLeft > 0)
+        if (readyToShoot && !reloading && bulletsLeft > 0 && Input.GetKeyUp(shootKey))
         {
             bulletsShot = bulletsPerTap;
             Shoot();
+        }
+
+        if (Input.GetKeyDown("r"))
+        {
+            Reload();
         }
     }
 
     public void Shoot()
     {
+
         readyToShoot = false;
 
         lineRenderer.SetPosition(0, shootPivot.transform.position);
+        lineRenderer.enabled = true;
 
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
         direction = pivot.forward;
 
-        if (Physics.Raycast(pivot.position, direction, out rayHit, range))
-        {
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(1, rayHit.point);
-        }
+        //if (Physics.Raycast(pivot.position, direction, out rayHit, range))
+        //{
+        //    lineRenderer.enabled = true;
+        //    lineRenderer.SetPosition(1, rayHit.point);
+        //}
 
         bulletsLeft--;
         bulletsShot--;
