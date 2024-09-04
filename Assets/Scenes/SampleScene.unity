@@ -1536,6 +1536,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.078927614, y: 0.012853126, z: 0.10026157}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!20 &1130420307 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7134075808022023604, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
+  m_PrefabInstance: {fileID: 6747290543029437638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135803700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,6 +2139,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 484353624993900043, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
+--- !u!4 &1900748362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5415102025928734215, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
+  m_PrefabInstance: {fileID: 6747290543029437638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1921404036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,22 +2730,26 @@ PrefabInstance:
     - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: pivot
       value: 
-      objectReference: {fileID: 649340761}
+      objectReference: {fileID: 1900748362}
+    - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1130420307}
     - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: bulletsMagazine
       value: 
       objectReference: {fileID: 1606357018}
     - target: {fileID: 3367165228116888202, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.57299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3367165228116888202, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.64
+      value: 3.367
       objectReference: {fileID: 0}
     - target: {fileID: 3367165228116888202, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.967819
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3367165228116888202, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_LocalRotation.w

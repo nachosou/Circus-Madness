@@ -3,8 +3,6 @@ using TMPro;
 
 public class GunSystem : MonoBehaviour
 {
-    [SerializeField] Transform pivot;
-
     public int damage;
     public float timeBetweenShooting;
     public float spread;
@@ -28,6 +26,7 @@ public class GunSystem : MonoBehaviour
     [SerializeField] public TextMeshProUGUI bulletsMagazine;
     [SerializeField] GameObject shootPivot;
     [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] Camera playerCamera;
 
     private void Start()
     {
@@ -71,9 +70,9 @@ public class GunSystem : MonoBehaviour
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
-        Vector3 spreadDirection = pivot.forward + new Vector3(x, y, 0);
+        Vector3 spreadDirection = shootPivot.transform.forward + new Vector3(x, y, 0);
 
-        if (Physics.Raycast(pivot.position, spreadDirection, out rayHit, range))
+        if (Physics.Raycast(shootPivot.transform.position, spreadDirection, out rayHit, range))
         {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(1, rayHit.point);
@@ -81,7 +80,7 @@ public class GunSystem : MonoBehaviour
         else
         {
             lineRenderer.enabled = true;
-            lineRenderer.SetPosition(1, pivot.position + spreadDirection * range);
+            lineRenderer.SetPosition(1, shootPivot.transform.position + spreadDirection * range);
         }
 
         bulletsLeft--;
