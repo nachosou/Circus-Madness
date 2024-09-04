@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 359793379124928421}
   - component: {fileID: 4051175123633901270}
   - component: {fileID: 7125624004167634121}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -90,6 +90,9 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 1024
+  Grappleable:
+    serializedVersion: 2
+    m_Bits: 0
   orientation: {fileID: 4900731138525769135}
 --- !u!114 &4051175123633901270
 MonoBehaviour:
@@ -153,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6558019527546986905}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +190,7 @@ GameObject:
   - component: {fileID: 5331884434535460895}
   - component: {fileID: 4497093091730322446}
   - component: {fileID: 2519136087562314725}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4900731138525769135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
