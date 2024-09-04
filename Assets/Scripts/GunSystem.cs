@@ -62,20 +62,26 @@ public class GunSystem : MonoBehaviour
 
     public void Shoot()
     {
-
         readyToShoot = false;
+
+        lineRenderer.enabled = false;
 
         lineRenderer.SetPosition(0, shootPivot.transform.position);
 
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
-        direction = pivot.forward;
+        Vector3 spreadDirection = pivot.forward + new Vector3(x, y, 0);
 
-        if (Physics.Raycast(pivot.position, direction, out rayHit, range))
+        if (Physics.Raycast(pivot.position, spreadDirection, out rayHit, range))
         {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(1, rayHit.point);
+        }
+        else
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(1, pivot.position + spreadDirection * range);
         }
 
         bulletsLeft--;

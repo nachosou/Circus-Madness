@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float playerHeight;
     public LayerMask Ground;
+    public LayerMask Grappleable;
     bool grounded;
+    bool inGrappleable;
 
     public Transform orientation;
 
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+        inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Grappleable);
 
         MyInput();
 
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         rb.AddForce(customGravity * Time.fixedDeltaTime, ForceMode.Acceleration);
 
-        if (grounded)
+        if (grounded || inGrappleable)
         {
             rb.drag = groundDrag;
         }
@@ -72,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump && grounded) 
+        if(Input.GetKey(jumpKey) && readyToJump && grounded || Input.GetKey(jumpKey) && readyToJump && inGrappleable) 
         { 
             readyToJump = false;
 
@@ -86,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if(grounded)
+        if(grounded || inGrappleable)
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         else 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
