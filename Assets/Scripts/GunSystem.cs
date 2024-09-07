@@ -64,7 +64,7 @@ public class GunSystem : MonoBehaviour
         readyToShoot = false;
 
         lineRenderer.enabled = false;
-
+        lineRenderer.transform.position = shootPivot.transform.position;
         lineRenderer.SetPosition(0, shootPivot.transform.position);
 
         float x = Random.Range(-spread, spread);
