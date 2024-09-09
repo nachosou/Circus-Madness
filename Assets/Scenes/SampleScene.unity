@@ -2779,6 +2779,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4374123407143192975, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4643417556421805460, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_Name
       value: CameraHolder
