@@ -738,8 +738,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7848278546271759216, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848278546271759216, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848278546271759216, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848278546271759216, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 718
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848278546271759216, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -601
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848278546271759216, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 367.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7442222239983540325, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
@@ -947,17 +972,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6025087558032487008, guid: c240da17a10efa940af468160af443c1, type: 3}
---- !u!114 &873797760 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2256004691232693154, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
-  m_PrefabInstance: {fileID: 689471433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &916150099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4900731138525769135, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
@@ -1063,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: bulletsMagazine
       value: 
-      objectReference: {fileID: 873797760}
+      objectReference: {fileID: 0}
     - target: {fileID: 3367165228116888202, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_LocalPosition.x
       value: -70.02194

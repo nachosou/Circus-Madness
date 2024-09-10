@@ -38,14 +38,14 @@ public class GunSystem : MonoBehaviour
 
     private void Update()
     {
-        UpdateBulletsMagazine();
+        //UpdateBulletsMagazine();
         CheckShoot();
     }
 
-    private void UpdateBulletsMagazine()
-    {
-        bulletsMagazine.text = (bulletsLeft + " / " + magazineSize);
-    }
+    //private void UpdateBulletsMagazine()
+    //{
+    //    bulletsMagazine.text = (bulletsLeft + " / " + magazineSize);
+    //}
 
     private void CheckShoot()
     {
