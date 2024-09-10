@@ -12,6 +12,8 @@ public class GunSystem : MonoBehaviour
     public int magazineSize;
     public int bulletsPerTap;
 
+    public LayerMask enemy;
+
     int bulletsLeft;
     int bulletsShot;
 
@@ -76,11 +78,12 @@ public class GunSystem : MonoBehaviour
         {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(1, rayHit.point);
-        }
-        else
-        {
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(1, shootPivot.transform.position + spreadDirection * range);
+
+            HealthSystem health = rayHit.collider.GetComponent<HealthSystem>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
         }
 
         bulletsLeft--;
