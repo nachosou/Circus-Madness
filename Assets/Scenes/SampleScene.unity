@@ -861,6 +861,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2841961818347650174, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
   m_PrefabInstance: {fileID: 6747290543029437638}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &662507530
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1712522128}
+    - target: {fileID: 3957894017210006739, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_Name
+      value: enemigo explota
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 82.320366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4717803
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.2319632
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442399775362541161, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
 --- !u!1 &668032839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4443239736413921938, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -2112,6 +2173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1712522128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3350465064222059166, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 216205287686486290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1815995246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -464929264933344952, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -2732,6 +2798,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1900748362}
     - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1130420307}
@@ -2819,3 +2889,4 @@ SceneRoots:
   - {fileID: 741431910}
   - {fileID: 1949627541928711148}
   - {fileID: 482791045}
+  - {fileID: 662507530}
