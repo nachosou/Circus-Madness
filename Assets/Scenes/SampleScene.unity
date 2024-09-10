@@ -412,6 +412,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2735251984287490357, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
+--- !u!1 &278765045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1235264035240329754, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 216205287686486290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &323239702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5503777983937465228, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -872,7 +877,7 @@ PrefabInstance:
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1712522128}
+      objectReference: {fileID: 278765045}
     - target: {fileID: 3957894017210006739, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: m_Name
       value: enemigo explota
@@ -2162,22 +2167,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1606357018 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2256004691232693154, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
-  m_PrefabInstance: {fileID: 1949627541928711148}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1712522128 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3350465064222059166, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-  m_PrefabInstance: {fileID: 216205287686486290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1815995246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -464929264933344952, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -2808,7 +2797,7 @@ PrefabInstance:
     - target: {fileID: 2486272444817064810, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: bulletsMagazine
       value: 
-      objectReference: {fileID: 1606357018}
+      objectReference: {fileID: 0}
     - target: {fileID: 3367165228116888202, guid: 0d9ab13bbdd11ce4f882a9e1870be488, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
