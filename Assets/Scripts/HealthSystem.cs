@@ -1,4 +1,3 @@
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -21,15 +20,15 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public void ResetHealth()
-    {
-        health = maxHealth;
-        // Asegúrate de que el enemigo esté activo antes de restablecer la salud
-        if (!gameObject.activeSelf)
-        {
-            gameObject.SetActive(true);
-        }
-    }
+    //public void ResetHealth()
+    //{
+    //    health = maxHealth;
+    //    // Asegúrate de que el enemigo esté activo antes de restablecer la salud
+    //    if (!gameObject.activeSelf)
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //}
 
     protected void Die()
     {

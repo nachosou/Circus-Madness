@@ -6,11 +6,11 @@ public class StaticEnemy : MonoBehaviour
 
     public KeyCode reset = KeyCode.R;
 
-    HealthSystem healthSystem;
+    //HealthSystem healthSystem;
 
     private void Start()
     {
-        healthSystem = gameObject.GetComponent<HealthSystem>();
+        //healthSystem = gameObject.GetComponent<HealthSystem>();
     }
 
     private void Update()
@@ -20,10 +20,10 @@ public class StaticEnemy : MonoBehaviour
             setLookAt();
         }
 
-        if (Input.GetKeyDown(reset))
-        {
-            ResetEnemy();
-        }
+        //if (Input.GetKeyDown(reset))
+        //{
+        //    ResetEnemy();
+        //}
     }
 
     void setLookAt()
@@ -37,16 +37,16 @@ public class StaticEnemy : MonoBehaviour
         transform.forward = vecLookAt;
     }
 
-    void ResetEnemy()
-    {
-        if (!gameObject.activeSelf) 
-        {
-            Debug.Log("Resetting enemy");
+    //void ResetEnemy()
+    //{
+    //    if (!gameObject.activeSelf) 
+    //    {
+    //        Debug.Log("Resetting enemy");
             
-            if (healthSystem != null)
-            {
-                healthSystem.ResetHealth();
-            }
-        }
-    }
+    //        if (healthSystem != null)
+    //        {
+    //            healthSystem.ResetHealth();
+    //        }
+    //    }
+    //}
 }
