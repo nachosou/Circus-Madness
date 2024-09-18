@@ -42,8 +42,7 @@ public class StaticEnemy : MonoBehaviour
         if (!gameObject.activeSelf) 
         {
             Debug.Log("Resetting enemy");
-            gameObject.SetActive(true);
-
+            
             if (healthSystem != null)
             {
                 healthSystem.ResetHealth();
