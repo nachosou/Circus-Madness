@@ -1,5 +1,3 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WallRunning : MonoBehaviour
@@ -13,6 +11,7 @@ public class WallRunning : MonoBehaviour
 
     public float walljumpUpForce;
     public float walljumpSideForce;
+    public float walljumpForwardForce; 
 
     private float verticalInput;
     public KeyCode jumpKey = KeyCode.Space;
@@ -123,9 +122,11 @@ public class WallRunning : MonoBehaviour
     {
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
 
-        Vector3 forceToApply = transform.up * walljumpUpForce + wallNormal * walljumpSideForce;
+        Vector3 forwardForce = orientation.forward * walljumpForwardForce;
 
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        Vector3 forceToApply = transform.up * walljumpUpForce + wallNormal * walljumpSideForce + forwardForce;
+
+        rb.velocity = Vector3.zero;
 
         rb.AddForce(forceToApply, ForceMode.Impulse);
     }
