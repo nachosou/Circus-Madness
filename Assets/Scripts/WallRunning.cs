@@ -86,6 +86,13 @@ public class WallRunning : MonoBehaviour
     private void StartWallrun()
     {
         wallRunning = true;
+        rb.useGravity = false;
+    }
+
+    private void StopWallrun()
+    {
+        wallRunning = false;
+        rb.useGravity = true;
     }
 
     private void WallrunMovement()
@@ -111,11 +118,6 @@ public class WallRunning : MonoBehaviour
         }
 
         rb.AddForce((wallForward * wallrunForce) * Time.fixedDeltaTime, ForceMode.Force);
-    }
-
-    private void StopWallrun()
-    {
-        wallRunning = false;
     }
 
     private void WallJump()
