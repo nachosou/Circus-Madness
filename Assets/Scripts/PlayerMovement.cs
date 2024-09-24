@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 startPos;
 
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode reset = KeyCode.R;
+    private KeyCode jumpKey = KeyCode.Space;
+    private KeyCode reset = KeyCode.O;
 
     public float playerHeight;
     public LayerMask Ground;
