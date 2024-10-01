@@ -62,8 +62,17 @@ public class Grappler : MonoBehaviour
         RaycastHit hitPoint;
         if (Physics.Raycast(cam.position, cam.forward, out hitPoint, maxGrappleDistance, grappleable))
         {
-            Vector3 surfaceNormal = hitPoint.normal;
-            grapplePoint = hitPoint.point - surfaceNormal * offSet;
+            Transform grappleMagnetism = hitPoint.transform.Find("GrapplerMagnetism");
+
+            if (grappleMagnetism != null)
+            {
+                grapplePoint = grappleMagnetism.position;
+            }
+            else
+            {
+                Vector3 surfaceNormal = hitPoint.normal;
+                grapplePoint = hitPoint.point - surfaceNormal * offSet;
+            }
 
             Invoke(nameof(ExecuteGrapple), grappleDelay);
         }
