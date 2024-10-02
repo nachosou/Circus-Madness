@@ -1276,6 +1276,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+--- !u!1 &804670180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804670182}
+  - component: {fileID: 804670181}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &804670181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804670180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4367ffd723c0c4da049e9d8d43d30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisLevelName: Nvl1
+  nextLevelName: 
+  playerHealth: {fileID: 1435163960}
+--- !u!4 &804670182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804670180}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.38, y: 60.342457, z: 51.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &823340899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3002,6 +3049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RisingFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 4486210591007571985, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8670141307853328220, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: m_LocalScale.x
       value: 77.54447
@@ -3734,6 +3785,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 0.0000000055879354, z: 1.0000002}
   m_Center: {x: -0.00000047683716, y: 0.0000038146973, z: -0.0000009536743}
+--- !u!114 &1435163960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8311721518686068573, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 804070555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36a2d7810b0e7a4aa5dcfae90d6b1ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1478578540
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4956,3 +5018,4 @@ SceneRoots:
   - {fileID: 804070555}
   - {fileID: 1952637026}
   - {fileID: 1067915812}
+  - {fileID: 804670182}

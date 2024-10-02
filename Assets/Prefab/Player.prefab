@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 359793379124928421}
   - component: {fileID: 4051175123633901270}
   - component: {fileID: 7125624004167634121}
+  - component: {fileID: -8311721518686068573}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -84,8 +85,6 @@ MonoBehaviour:
   jumpForce: 14
   jumpCooldown: 0.5
   airMultiplier: 0.4
-  jumpKey: 32
-  reset: 114
   playerHeight: 2
   Ground:
     serializedVersion: 2
@@ -143,10 +142,24 @@ MonoBehaviour:
   maxWallrunTime: 5
   walljumpUpForce: 100
   walljumpSideForce: 10
+  walljumpForwardForce: 0
   jumpKey: 32
   wallCheckDistance: 1
   minJumpHeight: 0.3
   orientation: {fileID: 4900731138525769135}
+--- !u!114 &-8311721518686068573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235264035240329754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36a2d7810b0e7a4aa5dcfae90d6b1ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
 --- !u!1 &2655173946751255280
 GameObject:
   m_ObjectHideFlags: 0
