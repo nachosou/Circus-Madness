@@ -13,7 +13,7 @@ public class LevelController : MonoBehaviour
     private void Update()
     {
         AdvanceLevelIfPressedButton();
-        PlayerDies();
+        ResetLevelIfPlayerDies();
     }
 
     private void AdvanceLevelIfPressedButton()
@@ -30,11 +30,13 @@ public class LevelController : MonoBehaviour
         NavigationManager.Instance.LoadScene(nextLevelName);
     }
 
-    private void PlayerDies()
+    private void ResetLevelIfPlayerDies()
     {
         if (playerHealth.health <= 0)
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+            playerHealth.health = 200;
+            SceneManager.LoadScene(gameObject.scene.name);
+            Debug.LogError($"{name}: Active scene is {SceneManager.GetActiveScene().name}");
         }
     }
 }
