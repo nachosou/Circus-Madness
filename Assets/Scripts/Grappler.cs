@@ -62,11 +62,14 @@ public class Grappler : MonoBehaviour
         RaycastHit hitPoint;
         if (Physics.Raycast(cam.position, cam.forward, out hitPoint, maxGrappleDistance, grappleable))
         {
-            Transform grappleMagnetism = hitPoint.transform.Find("GrapplerMagnetism");
+            Transform grappleMagnetism = hitPoint.collider.transform.GetComponentInChildren<Transform>(true).Find("GrapplerMagnetism");
 
             if (grappleMagnetism != null)
             {
-                grapplePoint = grappleMagnetism.position;
+                Vector3 surfaceNormal = hitPoint.normal;
+                grapplePoint = grappleMagnetism.position - surfaceNormal * offSet;
+
+                Debug.Log("AAAAA");
             }
             else
             {
@@ -118,5 +121,7 @@ public class Grappler : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = true;
         GetComponent<Rigidbody>().isKinematic = false;
         isGrappling = false;
+
+        lineRenderer.enabled = false;
     }
 }
