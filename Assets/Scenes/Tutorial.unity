@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisLevelName: Tutorial
-  nextLevelName: nvl 1
+  nextLevelName: Lvl1
   playerHealth: {fileID: 2043342736}
 --- !u!4 &1063960829
 Transform:
