@@ -544,11 +544,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2972113503398040646, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
---- !u!4 &365838751 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 81192800229571823, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
-  m_PrefabInstance: {fileID: 1398425049}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366966820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4063923665782810058, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -1969,24 +1964,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3228522201702599806, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
---- !u!1 &1292146982 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1185649558969353270, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
-  m_PrefabInstance: {fileID: 1398425049}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1292146987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292146982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7c9274db304084793e762c67e4655e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnetismPoint: {fileID: 365838751}
 --- !u!1 &1311190863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5718264005047155484, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -2105,21 +2082,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6647305432104562270, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647305432104562270, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1185649558969353270, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1292146987}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
 --- !u!1 &1422723932 stripped
 GameObject:

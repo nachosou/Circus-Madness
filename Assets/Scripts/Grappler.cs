@@ -67,8 +67,6 @@ public class Grappler : MonoBehaviour
             if (grappleMagnetism != null)
             {
                 grapplePoint = grappleMagnetism.position;
-
-                Debug.Log("AAAAA");
             }
             else
             {

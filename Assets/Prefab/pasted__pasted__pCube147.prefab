@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3064304252141371177}
   - component: {fileID: 4731024704691907256}
   - component: {fileID: 4366569535647381718}
+  - component: {fileID: 5805542076423532337}
   m_Layer: 11
   m_Name: pasted__pasted__pCube147
   m_TagString: Untagged
@@ -27,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185649558969353270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -481, z: -2}
-  m_LocalScale: {x: 15.195438, y: 15.195438, z: 14.694515}
+  m_LocalScale: {x: 0.36175334, y: 0.36175334, z: 0.349828}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 81192800229571823}
@@ -106,6 +107,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 18.12539, y: 2.5859356, z: 3.0754821}
   m_Center: {x: 0.033178747, y: -0.034217875, z: 0.067472786}
+--- !u!114 &5805542076423532337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185649558969353270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7c9274db304084793e762c67e4655e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetismPoint: {fileID: 81192800229571823}
 --- !u!1 &6647305432104562270
 GameObject:
   m_ObjectHideFlags: 0
