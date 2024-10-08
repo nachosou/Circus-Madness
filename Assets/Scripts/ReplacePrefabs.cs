@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReplacePrefabs : MonoBehaviour
 {
-    [MenuItem("MyMenu/Do Something")]
+    [MenuItem("MyMenu/Change prefabs")]
     static void CollectGrappleableObjects()
     {    
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Trapeze.prefab");
