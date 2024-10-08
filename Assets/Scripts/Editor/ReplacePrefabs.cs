@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 
-
 public class ReplacePrefabs : MonoBehaviour
 {
     [MenuItem("MyMenu/Change prefabs")]
