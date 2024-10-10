@@ -101,15 +101,6 @@ public class WallRunning : MonoBehaviour
 
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
 
-        //if (isRunningInRightWall) 
-        //{
-        //    wallNormal = rightWallhit.normal;
-        //}
-        //else if (isRunningInLeftWall)
-        //{
-        //    wallNormal = leftWallhit.normal;
-        //}
-
         Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
 
         if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
@@ -126,7 +117,7 @@ public class WallRunning : MonoBehaviour
 
         Vector3 forwardForce = orientation.forward * walljumpForwardForce;
 
-        Vector3 forceToApply = transform.up * walljumpUpForce + wallNormal * walljumpSideForce + forwardForce;
+        Vector3 forceToApply = transform.up * walljumpUpForce + forwardForce;
 
         rb.velocity = Vector3.zero;
 
