@@ -10,7 +10,6 @@ public class WallRunning : MonoBehaviour
     private bool wallRunning;
 
     public float walljumpUpForce;
-    public float walljumpSideForce;
     public float walljumpForwardForce; 
 
     private float verticalInput;
