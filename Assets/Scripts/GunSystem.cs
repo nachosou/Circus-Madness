@@ -34,6 +34,7 @@ public class GunSystem : MonoBehaviour
     {
         readyToShoot = true;
         reloading = false;
+        bulletsLeft = magazineSize;
     }
 
     private void Update()
