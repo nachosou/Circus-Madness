@@ -107,7 +107,7 @@ public class WallRunning : MonoBehaviour
             wallForward = -wallForward;
         }
 
-        rb.AddForce((wallForward * wallrunForce) * Time.fixedDeltaTime, ForceMode.Force);
+        rb.AddForce((wallForward * wallrunForce * 10) * Time.fixedDeltaTime, ForceMode.Force);
     }
 
     private void WallJump()
