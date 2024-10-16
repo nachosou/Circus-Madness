@@ -6,7 +6,7 @@ public class ReplacePrefabs : MonoBehaviour
     [MenuItem("MyMenu/Change prefabs")]
     static void CollectGrappleableObjects()
     {    
-        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Enviorment/Trapeze.prefab");
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefab/Enviornment/Cart_With_Balloon.prefab");
 
         GameObject[] grappleableObjects = Object.FindObjectsOfType(typeof(GameObject)) as GameObject[];
         int grappleableLayer = LayerMask.NameToLayer("ObjectToChange");

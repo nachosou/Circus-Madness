@@ -8,7 +8,7 @@ public class MenuHandler : MonoBehaviour
     public void PlayGame()
     {
         NavigationManager.Instance.UnloadScene("MainMenu");  
-        NavigationManager.Instance.LoadScene("Lvl1");
+        NavigationManager.Instance.LoadScene("Tutorial");
     }
 
     public void OpenCredits()
