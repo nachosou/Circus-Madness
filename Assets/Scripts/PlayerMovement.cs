@@ -83,14 +83,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private Vector3 GetGroundNormal()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.1f, Ground))
+        {
+            return hit.normal;  
+        }
+
+        return Vector3.up;
+    }
+
     private void MovePlayer()
     {
         moveDirection = orientation.forward * inputDir.y + orientation.right * inputDir.x;
 
-        if(grounded || inGrappleable)
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        else 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        Vector3 groundNormal = GetGroundNormal();
+        Vector3 adjustedDirection = Vector3.ProjectOnPlane(moveDirection, groundNormal).normalized;
+
+        float multiplier = (grounded || inGrappleable) ? 10f : 10f * airMultiplier;
+        rb.AddForce(adjustedDirection * moveSpeed * multiplier, ForceMode.Force);
     }
 
     private void Jump()
