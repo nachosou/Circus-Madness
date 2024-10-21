@@ -87,14 +87,14 @@ public class ExplosiveEnemy : MonoBehaviour
         {
             Debug.Log($"Detectado: {hitCollider.name}");
 
-            Rigidbody rb = hitCollider.GetComponent<Rigidbody>();
+            Rigidbody rb = hitCollider.GetComponentInParent<Rigidbody>();
             if (rb != null)
             {
                 Debug.Log("Aplicando fuerza de explosión.");
                 rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
             }
 
-            HealthSystem playerHealth = hitCollider.GetComponent<HealthSystem>();
+            HealthSystem playerHealth = hitCollider.GetComponentInParent<HealthSystem>();
             if (playerHealth != null)
             {
                 Debug.Log("Aplicando daño al jugador.");
