@@ -81,23 +81,21 @@ public class ExplosiveEnemy : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
-        Debug.Log($"Explotando, objetos detectados: {hitColliders.Length}");
-
         foreach (var hitCollider in hitColliders)
         {
-            Debug.Log($"Detectado: {hitCollider.name}");
-
             Rigidbody rb = hitCollider.GetComponentInParent<Rigidbody>();
             if (rb != null)
             {
-                Debug.Log("Aplicando fuerza de explosión.");
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                rb.mass = 1f;
+                rb.drag = 0f;
+                rb.angularDrag = 0.05f;
+
+                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, explosionForce, ForceMode.Impulse);
             }
 
             HealthSystem playerHealth = hitCollider.GetComponentInParent<HealthSystem>();
             if (playerHealth != null)
             {
-                Debug.Log("Aplicando daño al jugador.");
                 playerHealth.TakeDamage((int)damage);
             }
         }
