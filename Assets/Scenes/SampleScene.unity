@@ -2164,6 +2164,10 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 808928755}
+    - target: {fileID: 2488128980734611911, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 15743
+      objectReference: {fileID: 0}
     - target: {fileID: 3360524636184214224, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2370,6 +2374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 1697509903612361687, guid: fb098f98cf6cbcc438147121e6b59304, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2036057372521323263, guid: fb098f98cf6cbcc438147121e6b59304, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.265392
@@ -2410,6 +2418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8987560830617151127, guid: fb098f98cf6cbcc438147121e6b59304, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2427,6 +2439,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 804581005}
+    - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
+      propertyPath: shootSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
+      propertyPath: shootDistance
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
       propertyPath: projectilePrefab
       value: 
