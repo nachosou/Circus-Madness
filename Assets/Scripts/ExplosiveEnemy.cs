@@ -81,6 +81,9 @@ public class ExplosiveEnemy : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
+        gameObject.GetComponent<Rigidbody>().position = Vector3.zero;
+        gameObject.GetComponent<Rigidbody>().useGravity = false;
+
         foreach (var hitCollider in hitColliders)
         {
             Rigidbody rb = hitCollider.GetComponentInParent<Rigidbody>();
