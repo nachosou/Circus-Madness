@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
                 playerHealth.TakeDamage(damage);
             }
 
-            rb.AddForce(transform.TransformDirection(-force), ForceMode.Impulse);
+            rb.AddForce(transform.TransformDirection(force), ForceMode.Impulse);
 
             Destroy(gameObject);  
         }

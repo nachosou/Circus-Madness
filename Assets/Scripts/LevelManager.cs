@@ -41,7 +41,8 @@ public class LevelController : MonoBehaviour
         if (playerHealth.health <= 0)
         {
             playerHealth.health = 200;
-            SceneManager.LoadScene(gameObject.scene.name);
+            NavigationManager.Instance?.UnloadScene(thisLevelName);
+            NavigationManager.Instance?.LoadScene(thisLevelName);
         }
     }
 }
