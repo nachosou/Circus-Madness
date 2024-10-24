@@ -26,8 +26,14 @@ public class LevelController : MonoBehaviour
 
     public void AdvanceToNextLevel()
     {
-        NavigationManager.Instance.UnloadScene(thisLevelName);
-        NavigationManager.Instance.LoadScene(nextLevelName);
+        if (!NavigationManager.Instance)
+        {
+            Debug.LogError($"{nameof(NavigationManager)} has no instance! Maybe you didn't play from Root?");
+            return;
+        }
+
+        NavigationManager.Instance?.UnloadScene(thisLevelName);
+        NavigationManager.Instance?.LoadScene(nextLevelName);
     }
 
     private void ResetLevelIfPlayerDies()

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private float damage; 
+    private float damage;
+    public Vector3 force;
 
     public void SetDamage(float damageValue)
     {
@@ -15,10 +16,14 @@ public class Projectile : MonoBehaviour
         {
             HealthSystem playerHealth = collision.transform.GetComponent<HealthSystem>();
 
+            Rigidbody rb = collision.transform.GetComponent<Rigidbody>();
+
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
             }
+
+            rb.AddForce(transform.TransformDirection(-force), ForceMode.Impulse);
 
             Destroy(gameObject);  
         }

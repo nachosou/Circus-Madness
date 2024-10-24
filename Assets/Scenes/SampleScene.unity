@@ -831,7 +831,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: damage
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: player
@@ -843,11 +843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: explosionForce
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: followDistance
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: explosionRadius
@@ -855,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: waitForExplosionTime
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7091125352474512265, guid: 6b341275c9b080b4892d8fd4ec3e76d4, type: 3}
       propertyPath: startExplosionDistance
@@ -2363,6 +2363,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 804581005}
@@ -2372,7 +2376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
       propertyPath: shootDistance
-      value: 40
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
       propertyPath: projectilePrefab

@@ -93,7 +93,7 @@ public class ExplosiveEnemy : MonoBehaviour
                 rb.drag = 0f;
                 rb.angularDrag = 0.05f;
 
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, explosionForce, ForceMode.Impulse);
+                rb.AddExplosionForce(explosionForce * 10, transform.position, explosionRadius);
             }
 
             HealthSystem playerHealth = hitCollider.GetComponentInParent<HealthSystem>();
