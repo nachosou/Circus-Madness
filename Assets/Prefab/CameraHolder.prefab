@@ -526,6 +526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hook_hand_test
       objectReference: {fileID: 0}
+    - target: {fileID: 1532478435868930553, guid: b086bfadb8709df4c88eec019afa1312, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3334634890481594807, guid: b086bfadb8709df4c88eec019afa1312, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.535
@@ -536,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3334634890481594807, guid: b086bfadb8709df4c88eec019afa1312, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.628
+      value: 1.538
       objectReference: {fileID: 0}
     - target: {fileID: 3334634890481594807, guid: b086bfadb8709df4c88eec019afa1312, type: 3}
       propertyPath: m_LocalRotation.w

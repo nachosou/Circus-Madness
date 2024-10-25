@@ -41,6 +41,12 @@ public class LevelController : MonoBehaviour
         if (playerHealth.health <= 0)
         {
             playerHealth.health = 200;
+
+            if (!NavigationManager.Instance)
+            {
+                Debug.LogError($"{nameof(NavigationManager)} has no instance! Maybe you didn't play from Root?");
+                return;
+            }
             NavigationManager.Instance?.UnloadScene(thisLevelName);
             NavigationManager.Instance?.LoadScene(thisLevelName);
         }
