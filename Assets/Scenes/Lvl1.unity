@@ -2998,8 +2998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4367ffd723c0c4da049e9d8d43d30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLevelName: nvl 1
-  nextLevelName: nvl 1
+  thisLevelName: Lvl1
+  nextLevelName: Lvl1
   playerHealth: {fileID: 1435163960}
 --- !u!4 &804670182
 Transform:
@@ -7278,6 +7278,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
   m_PrefabInstance: {fileID: 804070555}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1435163966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 804070555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d780b9129e95e9e4d8eb3b0d73def139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1436037791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9547,6 +9558,10 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 916150099}
+    - target: {fileID: 553295087181340520, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: wallRunningScript
+      value: 
+      objectReference: {fileID: 1435163966}
     - target: {fileID: 2488128980734611911, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: near clip plane
       value: 0.01

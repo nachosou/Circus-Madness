@@ -1286,11 +1286,27 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1279754954}
   m_SourcePrefab: {fileID: 100100000, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
+--- !u!4 &798391369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2439900843553210202, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+  m_PrefabInstance: {fileID: 744877560167189373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &804581005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702025551940408255, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
   m_PrefabInstance: {fileID: 216205287686486290}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &806328916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 216205287686486290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d780b9129e95e9e4d8eb3b0d73def139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &808928755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4900731138525769135, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
@@ -2033,6 +2049,26 @@ PrefabInstance:
       propertyPath: lineRenderer
       value: 
       objectReference: {fileID: 1389758861}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: tiltAngle
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: tiltSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 8850589454533589176}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: gunCameraTransform
+      value: 
+      objectReference: {fileID: 798391369}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: isRunningInLeftWall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 69.68
@@ -2153,9 +2189,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 553295087181340520, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: tiltAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 553295087181340520, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: tiltSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 553295087181340520, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: orientation
       value: 
       objectReference: {fileID: 808928755}
+    - target: {fileID: 553295087181340520, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: wallRunningScript
+      value: 
+      objectReference: {fileID: 806328916}
     - target: {fileID: 2488128980734611911, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 15743

@@ -507,7 +507,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 15487
+    m_Bits: 15743
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -542,6 +542,9 @@ MonoBehaviour:
   sensX: 800
   sensY: 800
   orientation: {fileID: 0}
+  wallRunningScript: {fileID: 0}
+  tiltAngle: 10
+  tiltSpeed: 100
 --- !u!1001 &2247260312397993494
 PrefabInstance:
   m_ObjectHideFlags: 0
