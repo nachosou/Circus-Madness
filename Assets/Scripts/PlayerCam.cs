@@ -7,8 +7,14 @@ public class PlayerCam : MonoBehaviour
 
     public Transform orientation;
 
+    [SerializeField] WallRunning wallRunningScript;
+
     float xRotation;
     float yRotation;
+
+    public float tiltAngle;
+    public float tiltSpeed;
+    private float currentTilt;
 
     private void Start()
     {
@@ -26,7 +32,29 @@ public class PlayerCam : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, WallRunTilt());
+        orientation.rotation = Quaternion.Euler(0, yRotation, WallRunTilt());
+    }
+
+    private float WallRunTilt()
+    {
+        if (wallRunningScript.wallRunning)
+        {
+            if (wallRunningScript.isRunningInLeftWall)
+            {
+                currentTilt = Mathf.MoveTowards(currentTilt, -tiltAngle, Time.deltaTime * tiltSpeed);
+            }
+            else if (wallRunningScript.isRunningInRightWall)
+            {
+                currentTilt = Mathf.MoveTowards(currentTilt, tiltAngle, Time.deltaTime * tiltSpeed);
+            }
+        }
+        else
+        {
+            currentTilt = Mathf.MoveTowards(currentTilt, 0, Time.deltaTime * tiltSpeed);
+        }
+
+        float targetRotation = currentTilt;
+        return targetRotation;
     }
 }

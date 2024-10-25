@@ -7,7 +7,7 @@ public class WallRunning : MonoBehaviour
 
     public float wallrunForce;
     public float maxWallrunTime;
-    private bool wallRunning;
+    public bool wallRunning;
 
     public float walljumpUpForce;
     public float walljumpForwardForce; 
@@ -19,9 +19,8 @@ public class WallRunning : MonoBehaviour
     public float minJumpHeight;
     private RaycastHit leftWallhit;
     private RaycastHit rightWallhit;
-    private bool isRunningInLeftWall;
-    private bool isRunningInRightWall;
-
+    public bool isRunningInLeftWall;
+    public bool isRunningInRightWall;
 
     [SerializeField] Transform orientation;
     private Rigidbody rb;
