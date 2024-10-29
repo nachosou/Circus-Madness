@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7728104518583902145}
   - component: {fileID: 8973959618378573091}
   - component: {fileID: 359793379124928421}
-  - component: {fileID: 4051175123633901270}
   - component: {fileID: 7125624004167634121}
   - component: {fileID: -8311721518686068573}
   m_Layer: 3
@@ -93,33 +92,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   orientation: {fileID: 4900731138525769135}
---- !u!114 &4051175123633901270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235264035240329754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70acbfa4b67a1ff4292be9d11726c9be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 7728104518583902145}
-  cam: {fileID: 0}
-  grapplerTip: {fileID: 0}
-  grappleable:
-    serializedVersion: 2
-    m_Bits: 2048
-  lineRenderer: {fileID: 0}
-  dot: {fileID: 0}
-  offSet: 1
-  maxGrappleDistance: 20
-  grappleDelay: 0.01
-  grapplingSpeed: 25
-  lerpDuration: 1
-  grapplingCoolDown: 0.2
-  grappleKey: 324
 --- !u!114 &7125624004167634121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +112,14 @@ MonoBehaviour:
     m_Bits: 1024
   wallrunForce: 25
   maxWallrunTime: 5
-  walljumpUpForce: 100
-  walljumpSideForce: 10
-  walljumpForwardForce: 0
+  wallRunning: 0
+  walljumpUpForce: 81
+  walljumpForwardForce: 15
   jumpKey: 32
   wallCheckDistance: 1
   minJumpHeight: 0.3
+  isRunningInLeftWall: 0
+  isRunningInRightWall: 0
   orientation: {fileID: 4900731138525769135}
 --- !u!114 &-8311721518686068573
 MonoBehaviour:
@@ -185,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 2655173946751255280}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0.794, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -205,7 +179,7 @@ GameObject:
   - component: {fileID: 2519136087562314725}
   m_Layer: 3
   m_Name: PlayerObj
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +214,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3350465064222059166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -3855,6 +3855,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+--- !u!54 &804070556 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8973959618378573091, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 804070555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804670180
 GameObject:
   m_ObjectHideFlags: 0
@@ -11604,6 +11609,18 @@ PrefabInstance:
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 150763951}
+    - target: {fileID: 6068092427319980255, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 804070556}
+    - target: {fileID: 6068092427319980255, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1435163964}
+    - target: {fileID: 6068092427319980255, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1435163965}
     - target: {fileID: 7194610817973473402, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: m_Name
       value: 'CameraHolder '

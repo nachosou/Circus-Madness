@@ -4,6 +4,8 @@ using UnityEngine;
 public class Grappler : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
+    [SerializeField] Rigidbody playerRB;
+    [SerializeField] PlayerMovement playerMovement;
     public Transform cam;
     public Transform grapplerTip;
     public LayerMask grappleable;
@@ -23,11 +25,13 @@ public class Grappler : MonoBehaviour
     private float grapplingCoolDownTimer;
 
     public KeyCode grappleKey = KeyCode.Mouse1;
-
     private bool isGrappling;
+
+    PlayerAnimationHandler playerAnimationHandler;
 
     private void Start()
     {
+        playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
     }
 
     private void Update()
@@ -41,6 +45,8 @@ public class Grappler : MonoBehaviour
         {
             grapplingCoolDownTimer -= Time.deltaTime;
         }
+
+        playerAnimationHandler.SetGrapplingBoolAnimation(isGrappling);
 
         dot.transform.position = cam.position + cam.forward * maxGrappleDistance;
     }
@@ -105,8 +111,8 @@ public class Grappler : MonoBehaviour
         Vector3 startPosition = playerTransform.position;
 
         isGrappling = true;
-        GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<PlayerMovement>().enabled = false;
+        playerRB.isKinematic = true;
+        playerMovement.enabled = false;
 
         while (timer < lerpDuration)
         {
@@ -115,8 +121,9 @@ public class Grappler : MonoBehaviour
 
             yield return null;
         }
-        GetComponent<PlayerMovement>().enabled = true;
-        GetComponent<Rigidbody>().isKinematic = false;
+
+        playerMovement.enabled = true;
+        playerRB.isKinematic = false;
         isGrappling = false;
 
         lineRenderer.enabled = false;
