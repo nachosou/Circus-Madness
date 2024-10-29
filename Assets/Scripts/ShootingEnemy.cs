@@ -4,7 +4,9 @@ public class ShootingEnemy : MonoBehaviour
 {
     [SerializeField] private Transform shootPoint;
     [SerializeField] private Transform target;     
-    [SerializeField] GameObject projectilePrefab;             
+    [SerializeField] GameObject projectilePrefab;   
+    
+    private IberuAnimationHandler animationHandler;
 
     public float shootCoolDown;             
     public float shootSpeed;             
@@ -12,6 +14,13 @@ public class ShootingEnemy : MonoBehaviour
     public float damage;
 
     private float shootTimer;
+    private bool isAttacking;
+
+    private void Start()
+    {
+        animationHandler = GetComponent<IberuAnimationHandler>();
+        isAttacking = false;
+    }
 
     private void Update()
     {
@@ -21,6 +30,7 @@ public class ShootingEnemy : MonoBehaviour
         {
             LookAtPlayer(); 
             Shoot();
+            animationHandler.SetIberuAttackingBoolAnimation(isAttacking);
         }
     }
 
@@ -45,12 +55,18 @@ public class ShootingEnemy : MonoBehaviour
         if (shootTimer <= 0.0f)
         {
             ShootAction(); 
-            shootTimer = shootCoolDown; 
+            shootTimer = shootCoolDown;           
+        }
+        else
+        {
+            isAttacking = false;
         }
     }
 
     private void ShootAction()
     {
+        isAttacking = true;
+
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
 
         Vector3 direction = (target.position - shootPoint.position).normalized;
