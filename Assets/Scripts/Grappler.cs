@@ -10,7 +10,6 @@ public class Grappler : MonoBehaviour
     public Transform grapplerTip;
     public LayerMask grappleable;
     public LineRenderer lineRenderer;
-    public GameObject dot;
 
     public float offSet;
     public float maxGrappleDistance;
@@ -47,8 +46,6 @@ public class Grappler : MonoBehaviour
         }
 
         playerAnimationHandler.SetGrapplingBoolAnimation(isGrappling);
-
-        dot.transform.position = cam.position + cam.forward * maxGrappleDistance;
     }
 
     private void LateUpdate()

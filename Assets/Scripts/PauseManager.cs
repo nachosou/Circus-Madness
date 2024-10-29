@@ -5,6 +5,7 @@ public class PauseManager : MonoBehaviour
 {
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private Canvas optionsCanvas;
+    [SerializeField] private Canvas gameplayCanvas;
     [SerializeField] LevelController levelController;
 
     private KeyCode pauseKey;
@@ -38,7 +39,8 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;      
         isPauseActive = true;      
-        pauseCanvas.enabled = true;  
+        pauseCanvas.enabled = true;
+        gameplayCanvas.enabled = false;  
         Cursor.lockState = CursorLockMode.None;  
         Cursor.visible = true;        
     }
@@ -47,7 +49,8 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;    
         isPauseActive = false;        
-        pauseCanvas.enabled = false; 
+        pauseCanvas.enabled = false;
+        gameplayCanvas.enabled = true; 
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false;       
     }

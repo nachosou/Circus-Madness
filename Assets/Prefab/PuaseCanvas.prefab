@@ -923,6 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 5771095677869459391}
   optionsCanvas: {fileID: 0}
+  gameplayCanvas: {fileID: 0}
   levelController: {fileID: 0}
 --- !u!1 &7328249039408245780
 GameObject:
