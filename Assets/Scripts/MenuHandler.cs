@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
-    [SerializeField] GameObject mainMenuCanvas;
-    [SerializeField] GameObject creditsCanvas;
+    [SerializeField] private GameObject mainMenuCanvas;
+    [SerializeField] private GameObject creditsCanvas;
 
     public void PlayGame()
     {
