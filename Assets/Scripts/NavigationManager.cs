@@ -21,7 +21,7 @@ public class NavigationManager : MonoBehaviour
 
     private void Start()
     {
-        LoadScene("MainMenu");
+        LoadScene("StartGame");
     }
 
     public void LoadScene(string sceneName)
