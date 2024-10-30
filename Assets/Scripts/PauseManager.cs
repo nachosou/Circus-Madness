@@ -57,6 +57,9 @@ public class PauseManager : MonoBehaviour
 
     public void MenuButton()
     {
+        isPauseActive = false;
+        pauseCanvas.enabled = false;
+        Time.timeScale = 1.0f;
         NavigationManager.Instance.UnloadScene(levelController.thisLevelName);
         NavigationManager.Instance.LoadScene("MainMenu");
     }   
