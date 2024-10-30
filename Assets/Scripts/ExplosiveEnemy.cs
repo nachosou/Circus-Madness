@@ -5,6 +5,8 @@ public class ExplosiveEnemy : MonoBehaviour
 {
     [SerializeField] Transform player;
 
+    private BugbamuAnimationHandler bugbamuAnimationHandler;    
+
     public float followDistance;
     public float followSpeed;
     public float startExplosionDistance;
@@ -16,11 +18,13 @@ public class ExplosiveEnemy : MonoBehaviour
 
     private bool hasToExplode;
     private bool isExploding;
+    private bool isAttacking;
 
     private void Start()
     {
         hasToExplode = false;
         isExploding = false;
+        bugbamuAnimationHandler = GetComponent<BugbamuAnimationHandler>();
     }
 
     private void Update()
@@ -37,11 +41,17 @@ public class ExplosiveEnemy : MonoBehaviour
         if (distanceToPlayer <= followDistance && !hasToExplode && !isExploding)
         {
             SetLookAt();
-            FollowPlayer();          
+            isAttacking = true;
+            FollowPlayer();  
+            bugbamuAnimationHandler.SetBugbamuAttackingBoolAnimation(isAttacking);
         }
         else if (hasToExplode && !isExploding)
         {
-            StartCoroutine(ExplodeAfterDelay());
+            isAttacking = false;
+            isExploding = true;
+            bugbamuAnimationHandler.SetBugbamuAttackingBoolAnimation(isAttacking);
+            bugbamuAnimationHandler.SetBugbamuExplodingBoolAnimation(isExploding);
+            StartCoroutine(ExplodeAfterDelay());            
         }    
     }
 

@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BugbamuAnimationHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Animator animator;
+
+    public void SetBugbamuAttackingBoolAnimation(bool isAttacking)
     {
-        
+        animator.SetBool("isAttacking", isAttacking);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetBugbamuExplodingBoolAnimation(bool isExploding)
     {
-        
+        animator.SetBool("isExploding", isExploding);
     }
 }
