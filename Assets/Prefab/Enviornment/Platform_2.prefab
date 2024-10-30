@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6672650176236165930}
   - component: {fileID: 3013622129302415583}
   - component: {fileID: 7761330675632513225}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface161
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6020045, y: 0.429142, z: 36.17227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.7297006, y: 6.7297006, z: 6.7297006}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7707168429196045501}
