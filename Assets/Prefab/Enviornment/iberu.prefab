@@ -52,7 +52,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca900b6d8df43f468c34e271a0fa6bf, type: 2}
+  - {fileID: 2100000, guid: f76b50f2ed2e686448dbcd09239a0cc2, type: 2}
+  - {fileID: 2100000, guid: 9ab9de776a2bfa34b9fb589e6ae6f8bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1364,7 +1365,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 59.73, y: 3.86, z: 10}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 6.200225, y: 6.200225, z: 6.200225}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 933099529666801345}
@@ -1410,7 +1411,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 5
+  speed: 10
   rotationSpeed: 5
   reachDistance: 0.2
 --- !u!114 &3515957762239764152
@@ -1430,7 +1431,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1697509903612361687, guid: fb098f98cf6cbcc438147121e6b59304, type: 3}
   shootCoolDown: 3
   shootSpeed: 80
-  shootDistance: 20
+  shootDistance: 40
   damage: 0
 --- !u!114 &1539746780178657628
 MonoBehaviour:
@@ -1625,7 +1626,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca900b6d8df43f468c34e271a0fa6bf, type: 2}
+  - {fileID: 2100000, guid: eeb51345d7109834f978e97534acdae8, type: 2}
+  - {fileID: 2100000, guid: 9ab9de776a2bfa34b9fb589e6ae6f8bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

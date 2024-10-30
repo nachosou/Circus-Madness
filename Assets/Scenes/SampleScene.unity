@@ -1358,29 +1358,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6099800089077584851, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
---- !u!1 &1210342617 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5531538196332520789, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
-  m_PrefabInstance: {fileID: 3196257659489203234}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1210342620 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3367394766364820296, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
-  m_PrefabInstance: {fileID: 3196257659489203234}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1210342622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210342617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecfe118a9c2b6154e81740e602d007e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1210342620}
 --- !u!1 &1279754950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4265168052672039481, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
@@ -2594,10 +2571,6 @@ PrefabInstance:
       value: 'Iberu '
       objectReference: {fileID: 0}
     - target: {fileID: 8088991986093088497, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088991986093088497, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1421329551}
@@ -2612,10 +2585,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5531538196332520789, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1210342622}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
 --- !u!4 &4624546712274926652 stripped
 Transform:

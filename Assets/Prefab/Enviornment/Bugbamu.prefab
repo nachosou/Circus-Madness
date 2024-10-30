@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  followDistance: 15
+  followDistance: 20
   followSpeed: 10
   startExplosionDistance: 4
   explosionForce: 1000
