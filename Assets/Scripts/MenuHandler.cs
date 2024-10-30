@@ -9,6 +9,7 @@ public class MenuHandler : MonoBehaviour
     {
         NavigationManager.Instance.UnloadScene("MainMenu");  
         NavigationManager.Instance.LoadScene("Tutorial");
+        RenderSettings.fog = true;
     }
 
     public void OpenCredits()
