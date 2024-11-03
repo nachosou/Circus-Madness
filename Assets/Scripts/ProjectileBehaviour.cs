@@ -1,15 +1,29 @@
+using System.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     private float damage;
     public float force;
+    private Vector3 moveDirection;
+    private Rigidbody projectileRB;
+    public float speed;
 
     private void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;  
-        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        projectileRB = GetComponent<Rigidbody>();
+        projectileRB.useGravity = false;
+        projectileRB.collisionDetectionMode = CollisionDetectionMode.Continuous;
+    }
+
+    private void Update()
+    {
+        projectileRB.AddForce(moveDirection * speed, ForceMode.Impulse);
+    }
+
+    public void SetDirection(Vector3 dir)
+    {
+        moveDirection = dir;
     }
 
     public void SetDamage(float damageValue)
@@ -20,28 +34,43 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Player"))
-        {           
+        {
+            Debug.Log("HIT PLAYER");
+
             HealthSystem playerHealth = collision.transform.GetComponent<HealthSystem>();
 
             Rigidbody rb = collision.transform.GetComponent<Rigidbody>();
+
+            PlayerMovement playerMovement = collision.transform.GetComponent<PlayerMovement>();
 
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
             }
 
-            if (rb != null)
+            if (rb != null && playerMovement != null)
             {
-                Vector3 impulseDirection = (collision.transform.position - transform.position).normalized;
+                float auxDrag = playerMovement.groundDrag;
+                playerMovement.groundDrag = 0;
 
-                rb.AddForce(impulseDirection * force, ForceMode.Impulse);
+                moveDirection.y = 0;
+
+                rb.AddForce(moveDirection * force, ForceMode.Impulse);
+
+                StartCoroutine(RestoreDrag(playerMovement, auxDrag));
             }
 
-            Destroy(gameObject);  
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject, 1f); 
-        }
+            Destroy(gameObject, 1f);
+        }        
+    }
+
+    private IEnumerator RestoreDrag(PlayerMovement playerMovement, float originalDrag)
+    {       
+        playerMovement.groundDrag = originalDrag;
+        yield return new WaitForSeconds(0.1f);
     }
 }

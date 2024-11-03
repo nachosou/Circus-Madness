@@ -8,8 +8,7 @@ public class ShootingEnemy : MonoBehaviour
     
     private IberuAnimationHandler animationHandler;
 
-    public float shootCoolDown;             
-    public float shootSpeed;             
+    public float shootCoolDown;                         
     public float shootDistance;
     public float damage;
 
@@ -69,18 +68,13 @@ public class ShootingEnemy : MonoBehaviour
 
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
 
-        Vector3 direction = (target.position - shootPoint.position).normalized;
-
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.velocity = direction * shootSpeed;
-        }
+        Vector3 direction = (target.position - shootPoint.position).normalized * Time.deltaTime;
 
         Projectile projScript = projectile.GetComponent<Projectile>();
         if (projScript != null)
         {
-            projScript.SetDamage(damage);  
+            projScript.SetDamage(damage);
+            projScript.SetDirection(direction);
         }
     }
 }
