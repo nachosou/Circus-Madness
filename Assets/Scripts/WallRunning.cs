@@ -7,10 +7,11 @@ public class WallRunning : MonoBehaviour
 
     public float wallrunForce;
     public float maxWallrunTime;
-    public bool wallRunning;
+    public bool isPlayerWallRunning;
 
     public float walljumpUpForce;
-    public float walljumpForwardForce; 
+    public float walljumpForwardForce;
+    public float walljumpSideForce;
 
     private float verticalInput;
     public KeyCode jumpKey = KeyCode.Space;
@@ -28,7 +29,7 @@ public class WallRunning : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        wallRunning = false;
+        isPlayerWallRunning = false;
     }
 
     private void Update()
@@ -39,7 +40,7 @@ public class WallRunning : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (wallRunning)
+        if (isPlayerWallRunning)
         {
             WallrunMovement();
         }
@@ -62,7 +63,7 @@ public class WallRunning : MonoBehaviour
 
         if ((isRunningInLeftWall || isRunningInRightWall) && verticalInput > 0 && HighEnough())
         {
-            if (!wallRunning) 
+            if (!isPlayerWallRunning) 
             { 
                 StartWallrun();               
             }
@@ -74,7 +75,7 @@ public class WallRunning : MonoBehaviour
         }
         else
         {
-            if (wallRunning) 
+            if (isPlayerWallRunning) 
             {
                 StopWallrun();
             }
@@ -83,13 +84,13 @@ public class WallRunning : MonoBehaviour
 
     private void StartWallrun()
     {
-        wallRunning = true;
+        isPlayerWallRunning = true;
         rb.useGravity = false;
     }
 
     private void StopWallrun()
     {
-        wallRunning = false;
+        isPlayerWallRunning = false;
         rb.useGravity = true;
     }
 
@@ -112,10 +113,17 @@ public class WallRunning : MonoBehaviour
     private void WallJump()
     {
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
+        Vector3 wallForward = Vector3.Cross(wallNormal, transform.up).normalized;
 
-        Vector3 forwardForce = orientation.forward * walljumpForwardForce;
+        if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
+        {
+            wallForward = -wallForward;
+        }
 
-        Vector3 forceToApply = transform.up * walljumpUpForce + forwardForce;
+        Vector3 forwardForce = wallForward * walljumpForwardForce;
+        Vector3 sideForce = (isRunningInRightWall ? -orientation.right : orientation.right) * walljumpSideForce;
+
+        Vector3 forceToApply = transform.up * walljumpUpForce + forwardForce + sideForce;
 
         rb.velocity = Vector3.zero;
 

@@ -38,7 +38,7 @@ public class PlayerCam : MonoBehaviour
 
     private float WallRunTilt()
     {
-        if (wallRunningScript.wallRunning)
+        if (wallRunningScript.isPlayerWallRunning)
         {
             if (wallRunningScript.isRunningInLeftWall)
             {

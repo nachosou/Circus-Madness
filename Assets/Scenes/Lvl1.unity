@@ -2733,6 +2733,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3812218, y: 1, z: 1.2074881}
   m_Center: {x: 0.019540787, y: 0, z: 0.0013947487}
+--- !u!136 &378690422 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2519136087562314725, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+  m_PrefabInstance: {fileID: 804070555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &381776518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4931,27 +4936,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: wallrunForce
-      value: 1000
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: maxWallrunTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 378690422}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1128737352}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpUpForce
-      value: 100
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: walljumpSideForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: gunCameraTransform
       value: 
       objectReference: {fileID: 1800203101}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: isPlayerWallRunning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpForwardForce
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.x
