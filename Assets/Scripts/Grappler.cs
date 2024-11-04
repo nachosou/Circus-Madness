@@ -16,6 +16,7 @@ public class Grappler : MonoBehaviour
     public float grappleDelay;
     public float grapplingSpeed;
     public float lerpDuration;
+    public float grappleLaunchForce; // Controla el empuje al finalizar el grappling
 
     private Vector3 grapplePoint;
     private float startTime;
@@ -121,8 +122,12 @@ public class Grappler : MonoBehaviour
 
         playerMovement.enabled = true;
         playerRB.isKinematic = false;
-        isGrappling = false;
 
+        // Aplica un impulso en la dirección del último punto de grappling
+        Vector3 launchDirection = (grapplePoint - startPosition).normalized;
+        playerRB.AddForce(launchDirection * grappleLaunchForce, ForceMode.VelocityChange);
+
+        isGrappling = false;
         lineRenderer.enabled = false;
     }
 }

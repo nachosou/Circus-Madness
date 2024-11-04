@@ -4931,7 +4931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: wallrunForce
-      value: 50
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: maxWallrunTime
@@ -10935,7 +10935,7 @@ Transform:
   m_GameObject: {fileID: 1684533377}
   serializedVersion: 2
   m_LocalRotation: {x: -7.8531184e-17, y: 0.939234, z: 7.8531184e-17, w: 0.34327748}
-  m_LocalPosition: {x: -13.8005905, y: 14.867293, z: -4.5066137}
+  m_LocalPosition: {x: -13.8005905, y: 13.73, z: -4.5066137}
   m_LocalScale: {x: 0.014850234, y: 0.012614877, z: 0.012614877}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12860,6 +12860,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1435163965}
+    - target: {fileID: 6068092427319980255, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: grappleLaunchForce
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7194610817973473402, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: m_Name
       value: 'CameraHolder '
@@ -15266,7 +15270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6336228549832178982, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.460651
+      value: 15.52
       objectReference: {fileID: 0}
     - target: {fileID: 6336228549832178982, guid: 6bc8dfe5f46a10548ba5222610d80174, type: 3}
       propertyPath: m_LocalPosition.z
