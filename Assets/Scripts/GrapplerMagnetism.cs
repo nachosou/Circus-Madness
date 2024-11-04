@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class GrapplerMagnetism : MonoBehaviour
 {
-    [SerializeField] Transform magnetismPoint;
+    [SerializeField] BoxCollider magnetismPoint;
 
-    public Transform GetMagnetismPoint() => magnetismPoint;
+    public Vector3 GetMagnetismPoint(Vector3 position)
+    {
+        return magnetismPoint != null ? magnetismPoint.ClosestPoint(position) : transform.position;
+    }    
 }
 

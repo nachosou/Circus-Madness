@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185649558969353270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.330867, y: 7.71, z: -16.429268}
-  m_LocalScale: {x: 0.5662831, y: 0.48104241, z: 0.48104241}
+  m_LocalRotation: {x: -0, y: 0.39183497, z: -0, w: 0.92003554}
+  m_LocalPosition: {x: -14.216252, y: 16.460651, z: 3.423714}
+  m_LocalScale: {x: 0.012688009, y: 0.0141657125, z: 0.014165714}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 81192800229571823}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7c9274db304084793e762c67e4655e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetismPoint: {fileID: 81192800229571823}
+  magnetismPoint: {fileID: 4942620000608977865}
 --- !u!65 &4366569535647381718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 81192800229571823}
+  - component: {fileID: 4942620000608977865}
   m_Layer: 11
   m_Name: 'GrapplerMagnetism '
   m_TagString: Untagged
@@ -145,9 +146,30 @@ Transform:
   m_GameObject: {fileID: 6647305432104562270}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.6, y: -370.4, z: -1.9}
+  m_LocalPosition: {x: -6.6, y: -370.1, z: -1.9}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6336228549832178982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4942620000608977865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647305432104562270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1235163, y: 0.029180031, z: 0.026849354}
+  m_Center: {x: 0.06395683, y: -0.026572019, z: 0.01689297}

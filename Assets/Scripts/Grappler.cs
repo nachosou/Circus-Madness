@@ -59,17 +59,17 @@ public class Grappler : MonoBehaviour
     private void StartGrapple()
     {
         if (grapplingCoolDownTimer > 0) return;
-
+        
         isGrappling = true;
 
         RaycastHit hitPoint;
         if (Physics.Raycast(cam.position, cam.forward, out hitPoint, maxGrappleDistance, grappleable))
         {
-            Transform grappleMagnetism = hitPoint.collider.GetComponent<GrapplerMagnetism>().GetMagnetismPoint();
+            GrapplerMagnetism grappleMagnetism = hitPoint.collider.GetComponent<GrapplerMagnetism>();
 
             if (grappleMagnetism != null)
             {
-                grapplePoint = grappleMagnetism.position;
+                grapplePoint = grappleMagnetism.GetMagnetismPoint(hitPoint.point);
             }
             else
             {
