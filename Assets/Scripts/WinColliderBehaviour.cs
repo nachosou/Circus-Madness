@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class WinColliderBehaviour : MonoBehaviour
 {
-    [SerializeField] private LevelController levelController;
+    [SerializeField] private WinHandler winHandler;
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.transform.CompareTag("Player"))
         {
-            levelController.AdvanceToNextLevel();
+            winHandler.hasPlayerWon = true;
         }
     }
 }

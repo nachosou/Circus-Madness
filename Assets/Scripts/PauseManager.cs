@@ -6,7 +6,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private Canvas optionsCanvas;
     [SerializeField] private Canvas gameplayCanvas;
-    [SerializeField] LevelController levelController;
+    [SerializeField] private LevelController levelController;
 
     private KeyCode pauseKey;
     private bool isPauseActive;
