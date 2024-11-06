@@ -631,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 3323711518754640155, guid: 6b9ccdb41d0912f4590a19a1d85518b3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ee89e4587ffd54a47bdd945679a7eaf7, type: 2}
+      objectReference: {fileID: 2100000, guid: a95b098cc8a6fc9468794675c2a6b0ca, type: 2}
     - target: {fileID: 3563390045757963491, guid: 6b9ccdb41d0912f4590a19a1d85518b3, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -659,7 +659,7 @@ PrefabInstance:
     - target: {fileID: 3899599578197897988, guid: 6b9ccdb41d0912f4590a19a1d85518b3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3c0ba0e2d0782454e87fc87f5896623e, type: 2}
+      objectReference: {fileID: 2100000, guid: 6fdd647d2b5759041a2b6879f94aa0eb, type: 2}
     - target: {fileID: 4055207896387768803, guid: 6b9ccdb41d0912f4590a19a1d85518b3, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -961,6 +961,7 @@ MonoBehaviour:
   grappleDelay: 0.01
   grapplingSpeed: 60
   lerpDuration: 1
+  grappleLaunchForce: 0
   grapplingCoolDown: 0.2
   grappleKey: 324
 --- !u!4 &6124600044290191564 stripped
