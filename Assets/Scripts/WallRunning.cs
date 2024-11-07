@@ -13,8 +13,7 @@ public class WallRunning : MonoBehaviour
     public float walljumpForwardForce;
     public float walljumpSideForce;
 
-    private float verticalInput;
-    public KeyCode jumpKey = KeyCode.Space;
+    KeyCode jumpKey = KeyCode.Space;
 
     public float wallCheckDistance;
     public float minJumpHeight;
@@ -23,13 +22,28 @@ public class WallRunning : MonoBehaviour
     public bool isRunningInLeftWall;
     public bool isRunningInRightWall;
 
-    [SerializeField] Transform orientation;
+    [SerializeField] private Transform orientation;
+    private float inputDir;
+    [SerializeField] private InputReader inputReader;
+
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         isPlayerWallRunning = false;
+    }
+
+    private void OnEnable()
+    {
+        inputReader.OnMove += AttemptWallRide;
+        inputReader.OnJump += AttemptWallJump;
+    }
+
+    private void OnDisable()
+    {
+        inputReader.OnMove -= AttemptWallRide;
+        inputReader.OnJump -= AttemptWallJump;
     }
 
     private void Update()
@@ -59,19 +73,17 @@ public class WallRunning : MonoBehaviour
 
     private void StateMachine()
     {
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        if ((isRunningInLeftWall || isRunningInRightWall) && verticalInput > 0 && HighEnough())
+        if ((isRunningInLeftWall || isRunningInRightWall) && inputDir > 0 && HighEnough())
         {
             if (!isPlayerWallRunning) 
             { 
                 StartWallrun();               
             }
 
-            if (Input.GetKeyDown(jumpKey))
-            {
-                WallJump();
-            }
+            //if (Input.GetKeyDown(jumpKey))
+            //{
+            //    WallJump();
+            //}
         }
         else
         {
@@ -79,6 +91,19 @@ public class WallRunning : MonoBehaviour
             {
                 StopWallrun();
             }
+        }
+    }
+
+    private void AttemptWallRide(Vector2 value)
+    {
+        inputDir = value.y;
+    }
+
+    private void AttemptWallJump()
+    {
+        if ((isRunningInLeftWall || isRunningInRightWall) && inputDir > 0 && HighEnough())
+        {
+            WallJump();
         }
     }
 

@@ -20,6 +20,11 @@ public class PlayerCam : MonoBehaviour
 
     [SerializeField] private InputReader inputReader;
 
+    private void Awake()
+    {
+        inputReader ??= FindAnyObjectByType<InputReader>();
+    }
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

@@ -449,12 +449,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc89452421ed25744bc97844a176562a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 10
+  sensY: 10
   orientation: {fileID: 0}
   wallRunningScript: {fileID: 0}
   tiltAngle: 20
   tiltSpeed: 100
+  inputReader: {fileID: 0}
 --- !u!114 &4150283822206427890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,7 +964,7 @@ MonoBehaviour:
   lerpDuration: 1
   grappleLaunchForce: 0
   grapplingCoolDown: 0.2
-  grappleKey: 324
+  inputReader: {fileID: 0}
 --- !u!4 &6124600044290191564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6295968609128746811, guid: 6b9ccdb41d0912f4590a19a1d85518b3, type: 3}
