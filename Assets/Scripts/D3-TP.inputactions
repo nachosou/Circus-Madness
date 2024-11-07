@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "15efaed0-8b42-4be9-8e10-3821f71eccf2",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
+                    "name": "MoveCamera",
                     "type": "Value",
                     "id": "047bfbc6-9507-45aa-a055-2b74e4d313d0",
                     "expectedControlType": "Vector2",
@@ -24,18 +24,27 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "FireGun",
+                    "name": "FireGrappler",
                     "type": "Button",
-                    "id": "e53984e1-c879-4d7b-80d4-542c831b75f2",
+                    "id": "fa54355f-f908-469c-890c-f77b4485de79",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "FireGrappler",
+                    "name": "Jump",
                     "type": "Button",
-                    "id": "fa54355f-f908-469c-890c-f77b4485de79",
+                    "id": "ec6865f0-80ff-4a5d-8b82-244d8bee4af8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PauseGame",
+                    "type": "Button",
+                    "id": "8d70fd40-9052-4821-8acf-c470b15d75e0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -182,18 +191,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Look",
+                    "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
-                    "path": "<Pointer>/delta",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Touch",
-                    "action": "Look",
+                    "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -204,29 +213,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "FireGun",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "FireGun",
+                    "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -244,11 +231,44 @@
                 {
                     "name": "",
                     "id": "4ada3e59-bce0-467a-a336-868c1c1c73b0",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "FireGrappler",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "832a0f92-1ef3-4159-95ce-dc98764c44e9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f8274f2d-13ad-4c44-aa2e-96abc6fa65b3",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21bc3710-8984-470c-9979-53408338f318",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

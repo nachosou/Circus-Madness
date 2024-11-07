@@ -24,29 +24,42 @@ public class Grappler : MonoBehaviour
     public float grapplingCoolDown;
     private float grapplingCoolDownTimer;
 
-    public KeyCode grappleKey = KeyCode.Mouse1;
     private bool isGrappling;
 
     PlayerAnimationHandler playerAnimationHandler;
+    [SerializeField] InputReader inputReader;
 
     private void Start()
     {
         playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
     }
 
+    private void OnEnable()
+    {
+        inputReader.OnGrappling += AttemptGrappling;
+    }
+
+    private void OnDisable()
+    {
+        inputReader.OnGrappling -= AttemptGrappling;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyUp(grappleKey) && !isGrappling)
-        {
-            StartGrapple();
-        }
-
         if (grapplingCoolDownTimer > 0)
         {
             grapplingCoolDownTimer -= Time.deltaTime;
         }
 
         playerAnimationHandler.SetGrapplingBoolAnimation(isGrappling);
+    }
+
+    private void AttemptGrappling()
+    {
+        if (!isGrappling)
+        {           
+            StartGrapple();
+        }
     }
 
     private void LateUpdate()

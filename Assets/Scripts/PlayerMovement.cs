@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 startPos;
 
-    private KeyCode jumpKey = KeyCode.Space;
     private KeyCode reset = KeyCode.O;
 
     public float playerHeight;
@@ -26,12 +26,11 @@ public class PlayerMovement : MonoBehaviour
     bool inGrappleable;
 
     public Transform orientation;
-
     private Vector2 inputDir;
-
     Vector3 moveDirection;
-
     Rigidbody rb;
+
+    [SerializeField] InputReader inputReader;
 
     private void Start()
     {
@@ -42,15 +41,26 @@ public class PlayerMovement : MonoBehaviour
         startPos = transform.position;
     }
 
+    private void OnEnable()
+    {
+        inputReader.OnJump += AttemptJump;
+        inputReader.OnMove += AttemptMove;
+        
+    }
+
+    private void OnDisable()
+    {
+        inputReader.OnJump -= AttemptJump;
+        inputReader.OnMove -= AttemptMove;
+    }
+
     private void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
         inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Grappleable);
 
-        MyInput();
-
-        if (Input.GetKey(reset)) 
-        { 
+        if (Input.GetKey(reset))
+        {
             transform.position = startPos;
         }
     }
@@ -70,11 +80,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void MyInput()
+    private void AttemptMove(Vector2 value)
     {
- 
-        if(Input.GetKey(jumpKey) && readyToJump && grounded || Input.GetKey(jumpKey) && readyToJump && inGrappleable) 
-        { 
+        inputDir = value;
+    }
+
+    private void AttemptJump()
+    {
+        if (readyToJump && grounded || readyToJump && inGrappleable)
+        {
             readyToJump = false;
 
             Jump();
@@ -115,10 +129,5 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
-    }
-
-    public void SetDirection(Vector2 vector2)
-    {
-        inputDir = vector2;
     }
 }

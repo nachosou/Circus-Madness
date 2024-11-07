@@ -16,24 +16,41 @@ public class PlayerCam : MonoBehaviour
     public float tiltSpeed;
     private float currentTilt;
 
+    Vector2 mouse;
+
+    [SerializeField] private InputReader inputReader;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
+    private void OnEnable()
+    {
+        inputReader.OnMoveCamera += AttemptCameraMove;
+    }
+
+    private void OnDisable()
+    {
+        inputReader.OnMoveCamera -= AttemptCameraMove;
+    }
+
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensY;
-
-        yRotation += mouseX;
-        xRotation -= mouseY;
+        yRotation += mouse.x;
+        xRotation -= mouse.y;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, WallRunTilt());
         orientation.rotation = Quaternion.Euler(0, yRotation, WallRunTilt());
+    }
+
+    private void AttemptCameraMove(Vector2 dir)
+    {
+        mouse.x = dir.x * Time.deltaTime * sensX;
+        mouse.y = dir.y * Time.deltaTime * sensY;
     }
 
     private float WallRunTilt()

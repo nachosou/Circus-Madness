@@ -7,8 +7,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Canvas optionsCanvas;
     [SerializeField] private Canvas gameplayCanvas;
     [SerializeField] private LevelController levelController;
+    [SerializeField] private InputReader inputReader;
 
-    private KeyCode pauseKey;
     private bool isPauseActive;
 
     private void Start()
@@ -16,23 +16,24 @@ public class PauseManager : MonoBehaviour
         pauseCanvas.enabled = false;
         optionsCanvas.enabled = false;
         isPauseActive = false;
-        pauseKey = KeyCode.Escape;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        InputCheck();
+        inputReader.OnPause += AttemptPause;
     }
 
-    private void InputCheck()
+    private void OnDisable()
     {
-        if (Input.GetKeyDown(pauseKey))
-        {
-            if (isPauseActive)
-                ResumeGame(); 
-            else
-                PauseGame();   
-        }
+        inputReader.OnPause -= AttemptPause;
+    }
+
+    private void AttemptPause()
+    {
+        if (isPauseActive)
+            ResumeGame();
+        else
+            PauseGame();
     }
 
     private void PauseGame()

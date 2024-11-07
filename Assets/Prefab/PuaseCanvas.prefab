@@ -724,6 +724,7 @@ MonoBehaviour:
   optionsCanvas: {fileID: 0}
   gameplayCanvas: {fileID: 0}
   levelController: {fileID: 0}
+  inputReader: {fileID: 0}
 --- !u!1 &7789453364279320837
 GameObject:
   m_ObjectHideFlags: 0
