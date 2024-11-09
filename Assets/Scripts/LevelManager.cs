@@ -38,7 +38,7 @@ public class LevelController : MonoBehaviour
         }
 
         NavigationManager.Instance?.UnloadScene(thisLevelName);
-        NavigationManager.Instance?.LoadScene(nextLevelName);
+        NavigationManager.Instance?.LoadScene(nextLevelName, true);
     }
 
     private void ResetLevelIfPlayerDies()
