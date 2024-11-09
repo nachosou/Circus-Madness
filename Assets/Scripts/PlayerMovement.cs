@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+
+    private float coyoteTime = 0.2f; 
+    private float coyoteTimeCounter;
 
     private Vector3 startPos;
 
@@ -59,6 +60,15 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
         inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Grappleable);
 
+        if (grounded || inGrappleable)
+        {
+            coyoteTimeCounter = coyoteTime; 
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
         if (Input.GetKey(reset))
         {
             transform.position = startPos;
@@ -87,12 +97,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttemptJump()
     {
-        if (readyToJump && grounded || readyToJump && inGrappleable)
+        if (readyToJump && (grounded || inGrappleable || coyoteTimeCounter > 0f))
         {
             readyToJump = false;
-
             Jump();
-
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
