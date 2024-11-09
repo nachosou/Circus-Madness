@@ -13,8 +13,6 @@ public class WallRunning : MonoBehaviour
     public float walljumpForwardForce;
     public float walljumpSideForce;
 
-    KeyCode jumpKey = KeyCode.Space;
-
     public float wallCheckDistance;
     public float minJumpHeight;
     private RaycastHit leftWallhit;
