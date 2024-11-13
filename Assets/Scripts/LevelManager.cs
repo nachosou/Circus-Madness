@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class LevelController : MonoBehaviour
 
         NavigationManager.Instance?.UnloadScene(thisLevelName);
         NavigationManager.Instance?.LoadScene(nextLevelName, true);
+
+        Scene activeScene = SceneManager.GetSceneByName(nextLevelName);
+        SceneManager.SetActiveScene(activeScene);
     }
 
     private void ResetLevelIfPlayerDies()
