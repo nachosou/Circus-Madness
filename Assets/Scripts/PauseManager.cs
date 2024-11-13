@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -73,7 +74,10 @@ public class PauseManager : MonoBehaviour
             return;
         }
         NavigationManager.Instance?.UnloadScene(levelController.thisLevelName);
-        NavigationManager.Instance?.LoadScene(levelController.thisLevelName);
+        NavigationManager.Instance?.LoadScene(levelController.thisLevelName, true);
+
+        Scene activeScene = SceneManager.GetSceneByName(levelController.thisLevelName);
+        SceneManager.SetActiveScene(activeScene);
 
         ResumeGame();
     }
