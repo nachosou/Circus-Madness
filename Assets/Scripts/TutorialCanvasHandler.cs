@@ -32,6 +32,10 @@ public class TutorialCanvasHandler : MonoBehaviour
             currentIndex++;
             UpdateDisplayedImage();
         }
+        else
+        {
+            HideMenu();
+        }
     }
 
     public void GoToPrevImage()
