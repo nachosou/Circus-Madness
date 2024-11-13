@@ -77,11 +77,6 @@ public class WallRunning : MonoBehaviour
             { 
                 StartWallrun();               
             }
-
-            //if (Input.GetKeyDown(jumpKey))
-            //{
-            //    WallJump();
-            //}
         }
         else
         {
@@ -146,10 +141,10 @@ public class WallRunning : MonoBehaviour
         Vector3 forwardForce = wallForward * walljumpForwardForce;
         Vector3 sideForce = (isRunningInRightWall ? -orientation.right : orientation.right) * walljumpSideForce;
 
-        Vector3 forceToApply = transform.up * walljumpUpForce + forwardForce + sideForce;
+        Vector3 forceToApply = (transform.up * walljumpUpForce + forwardForce + sideForce).normalized * walljumpForwardForce;
 
         rb.velocity = Vector3.zero;
 
-        rb.AddForce(forceToApply, ForceMode.Impulse);
+        rb.AddForce(forceToApply, ForceMode.VelocityChange);
     }
 }

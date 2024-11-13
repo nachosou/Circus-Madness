@@ -77,13 +77,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e64450119aac245a56247c1bd1e292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 18
   groundDrag: 5
   airDrag: 2
-  customGravity: {x: 0, y: -1146, z: 0}
-  jumpForce: 14
+  customGravity: {x: 0, y: -3200, z: 0}
+  jumpForce: 34
   jumpCooldown: 0.5
-  airMultiplier: 0.4
+  airMultiplier: 0.2
   playerHeight: 2
   Ground:
     serializedVersion: 2
@@ -92,6 +92,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   orientation: {fileID: 4900731138525769135}
+  inputReader: {fileID: 0}
 --- !u!114 &7125624004167634121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,17 +111,18 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 1024
-  wallrunForce: 25
-  maxWallrunTime: 5
-  wallRunning: 0
-  walljumpUpForce: 81
-  walljumpForwardForce: 15
-  jumpKey: 32
+  wallrunForce: 400
+  maxWallrunTime: 10
+  isPlayerWallRunning: 0
+  walljumpUpForce: 400
+  walljumpForwardForce: 100
+  walljumpSideForce: 70
   wallCheckDistance: 1
   minJumpHeight: 0.3
   isRunningInLeftWall: 0
   isRunningInRightWall: 0
   orientation: {fileID: 4900731138525769135}
+  inputReader: {fileID: 0}
 --- !u!114 &-8311721518686068573
 MonoBehaviour:
   m_ObjectHideFlags: 0
