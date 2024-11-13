@@ -656,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 322568329737822558, guid: 4614c4b683daf3142a2cd88369683568, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6514234710248429286, guid: 4614c4b683daf3142a2cd88369683568, type: 3}
       propertyPath: m_Pivot.x
@@ -1490,15 +1490,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670141307853328220, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: m_LocalScale.x
-      value: 134.06346
+      value: 303.5063
       objectReference: {fileID: 0}
     - target: {fileID: 8670141307853328220, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3082
+      value: 5.225534
       objectReference: {fileID: 0}
     - target: {fileID: 8670141307853328220, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: m_LocalScale.z
-      value: 136.9164
+      value: 309.96503
       objectReference: {fileID: 0}
     - target: {fileID: 8670141307853328220, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4012,7 +4012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5900531544081779053, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8004133873222413044, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
       propertyPath: inputReader
@@ -4545,7 +4545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7224541681332467415, guid: e71b8de277d73a343a49f5015cb256e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4763,6 +4763,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 133522078220781680, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 2075114869}
+    - target: {fileID: 133522078220781680, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: inputReader
+      value: 
+      objectReference: {fileID: 1828380641}
+    - target: {fileID: 133522078220781680, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 2075114866}
+    - target: {fileID: 133522078220781680, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2043342735}
     - target: {fileID: 553295087181340520, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: tiltAngle
       value: 20
@@ -5221,7 +5237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1317585627519574524, guid: 2e91fb8864ba8aa4fbd09df40afc1fcc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2370818481389175330, guid: 2e91fb8864ba8aa4fbd09df40afc1fcc, type: 3}
       propertyPath: m_Pivot.x
@@ -5454,7 +5470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547947454319115661, guid: a91aa1fe7bcce2d4eaa185c343afb06a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7019,7 +7035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1959596361058704838, guid: 4efc1d0505bedc44d9a694e5a18c2366, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2125117759469669302, guid: 4efc1d0505bedc44d9a694e5a18c2366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
