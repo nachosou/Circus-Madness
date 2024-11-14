@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class ExplosiveEnemy : MonoBehaviour
 {
     [SerializeField] Transform player;
+    [SerializeField] ParticleSystem confetti;
 
     private BugbamuAnimationHandler bugbamuAnimationHandler;    
 
@@ -113,6 +115,7 @@ public class ExplosiveEnemy : MonoBehaviour
             }
         }
 
+        Instantiate(confetti, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
         Destroy(gameObject);
     }
 
