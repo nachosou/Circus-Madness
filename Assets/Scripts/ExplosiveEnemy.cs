@@ -119,6 +119,8 @@ public class ExplosiveEnemy : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius); 
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, followDistance); 
     }
 }

@@ -77,4 +77,10 @@ public class ShootingEnemy : MonoBehaviour
             projScript.SetDirection(direction);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, shootDistance);
+    }
 }
