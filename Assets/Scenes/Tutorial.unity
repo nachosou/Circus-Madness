@@ -3997,9 +3997,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuaseCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5900531544081779053, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 7325598877099324186, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8004133873222413044, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
       propertyPath: inputReader
