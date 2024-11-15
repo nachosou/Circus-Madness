@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{86D043F5-1F36-A24D-30DA-50445215D9F3}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,20 +19,34 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{11A4B667-CE8F-E0D5-AD01-9F66AC8EF1B2}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{EB20C0DA-D332-243B-8888-2CDF19736EBB}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
+				<File Id="228559159" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Confetti_Sound.wav</ShortName>
+					<CachePath>SFX/Confetti_Sound_10C4C929.wem</CachePath>
+				</File>
+				<File Id="682246755" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Iberu_Attack_03.wav</ShortName>
+					<CachePath>SFX/Iberu_Attack_03_10C4C929.wem</CachePath>
+				</File>
 				<File Id="874844685" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience-CircussMadness.wav</ShortName>
-					<CachePath>SFX/Ambience-CircussMadness_D147C02D.wem</CachePath>
+					<CachePath>SFX/Ambience-CircussMadness_EED770DE.wem</CachePath>
 				</File>
 				<File Id="1030807373" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Metal_Knieves_01.wav</ShortName>
 					<CachePath>SFX/Footstep_Metal_Knieves_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1045389676" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Wood_02.wav</ShortName>
+					<CachePath>SFX/Footstep_Wood_02_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -41,13 +55,28 @@
 						<MediaRef Id="874844685"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="831234954" Name="Play_Confetti" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="228559159"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2813079730" Name="Play_Iberu_Attack" DurationType="OneShot" DurationMin="0.2667347" DurationMax="0.2667347">
+					<MediaRefs>
+						<MediaRef Id="682246755"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1646441721" Name="Play_Knives_Step" DurationType="OneShot" DurationMin="0.6101814" DurationMax="0.6101814">
 					<MediaRefs>
 						<MediaRef Id="1030807373"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3671582065" Name="Play_Player_Steps" DurationType="OneShot" DurationMin="0.50730157" DurationMax="0.50730157">
+					<MediaRefs>
+						<MediaRef Id="1045389676"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{30354D65-4065-B84D-F44C-8A81A6D30FBA}</FileHash>
+	<FileHash>{A545377D-EDB9-23D3-DB68-3AA7B17D5EE3}</FileHash>
 </SoundBanksInfo>

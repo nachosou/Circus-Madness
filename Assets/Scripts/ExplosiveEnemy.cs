@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using AK.Wwise;
 
 public class ExplosiveEnemy : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class ExplosiveEnemy : MonoBehaviour
     private bool hasToExplode;
     private bool isExploding;
     private bool isAttacking;
+
+    public AK.Wwise.Event wwiseEvent;
 
     private void Start()
     {
@@ -116,6 +118,7 @@ public class ExplosiveEnemy : MonoBehaviour
         }
 
         Instantiate(confetti, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+        wwiseEvent.Post(gameObject);
         Destroy(gameObject);
     }
 

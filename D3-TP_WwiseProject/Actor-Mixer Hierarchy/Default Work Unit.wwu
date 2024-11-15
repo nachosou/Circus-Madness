@@ -3,35 +3,13 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Footstep_Wood_02" ID="{FB7914A5-B361-4AB4-BE22-05CD4E29B7D7}" ShortID="670395822">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Footstep_Wood_02" ID="{24A9209A-6C4E-4723-A7EC-2C79B9FC0A70}">
-							<Language>SFX</Language>
-							<AudioFile>Footstep_Wood_02.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="1045389676"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Footstep_Wood_02" ID="{24A9209A-6C4E-4723-A7EC-2C79B9FC0A70}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="Iberu_Attack_03" ID="{7E0BE1BA-EAF8-4988-BCA6-83A586FDB3FA}" ShortID="1068136634">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -53,7 +31,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -78,7 +56,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+							<ObjectRef Name="Music" ID="{7430934E-CF13-4121-B948-CC1F50EC7808}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -96,6 +74,50 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Ambience-CircussMadness" ID="{146A7BF1-C955-4699-8D84-867C5F05B866}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Footstep_Wood_02" ID="{FB7914A5-B361-4AB4-BE22-05CD4E29B7D7}" ShortID="670395822">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Footstep_Wood_02" ID="{24A9209A-6C4E-4723-A7EC-2C79B9FC0A70}">
+							<Language>SFX</Language>
+							<AudioFile>Footstep_Wood_02.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1045389676"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Footstep_Wood_02" ID="{24A9209A-6C4E-4723-A7EC-2C79B9FC0A70}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Confetti_Sound" ID="{C925BA10-FBB3-4FC6-A706-B2978FD698E5}" ShortID="714642415">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Confetti_Sound" ID="{C8D08E05-145E-4ADB-A77A-20D51A3E1A48}">
+							<Language>SFX</Language>
+							<AudioFile>Confetti_Sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="228559159"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Confetti_Sound" ID="{C8D08E05-145E-4ADB-A77A-20D51A3E1A48}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

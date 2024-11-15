@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: a6a7da72eb41f1418b0381f3fdff22e1
     GuidInternal: 
-    m_lastTime: -8584705800922545409
+    m_lastTime: -8584699674090357488
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,40 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 4e93307413cf2141b948cc1f50ec7808
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a6a7da72eb41f1418b0381f3fdff22e1
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 4e93307413cf2141b948cc1f50ec7808
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: SFX
+      guid: 804492ed80c6374099ce37db055f5c5c
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a6a7da72eb41f1418b0381f3fdff22e1
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX
+        ObjectType: 2
+        guid: 804492ed80c6374099ce37db055f5c5c
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -66,8 +100,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 11a6f93a54b041428bdd4330e6b1b555
     GuidInternal: 
-    m_lastTime: -8584705800921967098
-    List: []
+    m_lastTime: -8584699667849800887
+    List:
+    - name: main
+      guid: 56151fdee858274188a891b1f0a56576
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 11a6f93a54b041428bdd4330e6b1b555
+      - ElementName: main
+        ObjectType: 7
+        guid: 56151fdee858274188a891b1f0a56576
+      Path: SoundBanks\Default Work Unit\main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +128,93 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fd9ce2586449f8428f00f512829727b9
     GuidInternal: 
-    m_lastTime: -8584705800922885482
-    List: []
+    m_lastTime: -8584699670309277513
+    List:
+    - name: Ambient
+      guid: e2b19cb4b0b6c7479aea18d8aab4a905
+      id: 77978275
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fd9ce2586449f8428f00f512829727b9
+      - ElementName: Ambient
+        ObjectType: 3
+        guid: e2b19cb4b0b6c7479aea18d8aab4a905
+      Path: Events\Default Work Unit\Ambient
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Confetti
+      guid: f20a6d93425b3847940e837886dbf81f
+      id: 831234954
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fd9ce2586449f8428f00f512829727b9
+      - ElementName: Play_Confetti
+        ObjectType: 3
+        guid: f20a6d93425b3847940e837886dbf81f
+      Path: Events\Default Work Unit\Play_Confetti
+      maxAttenuation: 0
+      maxDuration: 2
+      minDuration: 2
+    - name: Play_Iberu_Attack
+      guid: e2ea632e7b14264ca7b147ebdd386652
+      id: 2813079730
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fd9ce2586449f8428f00f512829727b9
+      - ElementName: Play_Iberu_Attack
+        ObjectType: 3
+        guid: e2ea632e7b14264ca7b147ebdd386652
+      Path: Events\Default Work Unit\Play_Iberu_Attack
+      maxAttenuation: 0
+      maxDuration: 0.2667347
+      minDuration: 0.2667347
+    - name: Play_Knives_Step
+      guid: 4afe9708e28fbc40a0f2b4cec7ec29dc
+      id: 1646441721
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fd9ce2586449f8428f00f512829727b9
+      - ElementName: Play_Knives_Step
+        ObjectType: 3
+        guid: 4afe9708e28fbc40a0f2b4cec7ec29dc
+      Path: Events\Default Work Unit\Play_Knives_Step
+      maxAttenuation: 0
+      maxDuration: 0.6101814
+      minDuration: 0.6101814
+    - name: Play_Player_Steps
+      guid: d8378fd998914545bfc2f731197858e6
+      id: 3671582065
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fd9ce2586449f8428f00f512829727b9
+      - ElementName: Play_Player_Steps
+        ObjectType: 3
+        guid: d8378fd998914545bfc2f731197858e6
+      Path: Events\Default Work Unit\Play_Player_Steps
+      maxAttenuation: 0
+      maxDuration: 0.50730157
+      minDuration: 0.50730157
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +272,7 @@ MonoBehaviour:
     m_lastTime: -8584705800921727049
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0500000006000000090000000a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
