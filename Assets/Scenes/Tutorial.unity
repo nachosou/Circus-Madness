@@ -1460,6 +1460,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &621166827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2100263808087016732, guid: 971123c6cae870f458b8aeffe2344bec, type: 3}
+  m_PrefabInstance: {fileID: 1451745257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &621166828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621166827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc7d09afc4b13d45a48a5ae76834e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: f0e92f0126abbf44d82d2799b1fac581, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
 --- !u!1001 &644504943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5192,7 +5222,10 @@ PrefabInstance:
     - {fileID: 1188965846208979722, guid: 971123c6cae870f458b8aeffe2344bec, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2100263808087016732, guid: 971123c6cae870f458b8aeffe2344bec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 621166828}
   m_SourcePrefab: {fileID: 100100000, guid: 971123c6cae870f458b8aeffe2344bec, type: 3}
 --- !u!1 &1499368374
 GameObject:
