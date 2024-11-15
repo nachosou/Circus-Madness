@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3AF9A611-B054-4241-8BDD-4330E6B1B555}" SchemaVersion="110">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{3AF9A611-B054-4241-8BDD-4330E6B1B555}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3AF9A611-B054-4241-8BDD-4330E6B1B555}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="main" ID="{DE1F1556-58E8-4127-88A8-91B1F0A56576}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Knives_Step" ID="{0897FE4A-8FE2-40BC-A0F2-B4CEC7EC29DC}" WorkUnitID="{58E29CFD-4964-42F8-8F00-F512829727B9}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ambient" ID="{B49CB1E2-B6B0-47C7-9AEA-18D8AAB4A905}" WorkUnitID="{58E29CFD-4964-42F8-8F00-F512829727B9}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

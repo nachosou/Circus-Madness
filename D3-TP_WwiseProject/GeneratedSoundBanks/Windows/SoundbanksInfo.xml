@@ -22,6 +22,32 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{11A4B667-CE8F-E0D5-AD01-9F66AC8EF1B2}">
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<Media>
+				<File Id="874844685" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience-CircussMadness.wav</ShortName>
+					<CachePath>SFX/Ambience-CircussMadness_D147C02D.wem</CachePath>
+				</File>
+				<File Id="1030807373" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Metal_Knieves_01.wav</ShortName>
+					<CachePath>SFX/Footstep_Metal_Knieves_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="77978275" Name="Ambient" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="874844685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1646441721" Name="Play_Knives_Step" DurationType="OneShot" DurationMin="0.6101814" DurationMax="0.6101814">
+					<MediaRefs>
+						<MediaRef Id="1030807373"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{728B0CF1-C3AD-A635-6DAF-778047395964}</FileHash>
+	<FileHash>{30354D65-4065-B84D-F44C-8A81A6D30FBA}</FileHash>
 </SoundBanksInfo>
