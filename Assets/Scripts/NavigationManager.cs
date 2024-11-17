@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class NavigationManager : MonoBehaviour
 {
+    [SerializeField] private string SceneName = "MainMenu";
     public static NavigationManager Instance;
 
     private void Awake()
@@ -21,12 +22,12 @@ public class NavigationManager : MonoBehaviour
 
     private void Start()
     {
-        LoadScene("StartGame");
+        LoadScene(SceneName);
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene(string sceneName, bool isActive = false)
     {
-        StartCoroutine(LoadSceneCoroutine(sceneName));
+        StartCoroutine(LoadSceneCoroutine(sceneName, isActive));
     }
 
     public void UnloadScene(string sceneName)
@@ -34,13 +35,20 @@ public class NavigationManager : MonoBehaviour
         StartCoroutine(UnloadSceneCoroutine(sceneName));
     }
 
-    private IEnumerator LoadSceneCoroutine(string sceneName)
+    private IEnumerator LoadSceneCoroutine(string sceneName, bool isActive)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
         while (!asyncLoad.isDone)
         {
             yield return null;
+        }
+
+        if(isActive) 
+        {
+            Scene activeScene = SceneManager.GetSceneByName(sceneName);
+
+            SceneManager.SetActiveScene(activeScene);   
         }
     }
 

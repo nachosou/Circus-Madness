@@ -32,6 +32,7 @@ public class Grappler : MonoBehaviour
     private void Start()
     {
         playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
+        lineRenderer.enabled = false;
     }
 
     private void OnEnable()
@@ -100,8 +101,11 @@ public class Grappler : MonoBehaviour
             Invoke(nameof(StopGrapple), grappleDelay);
         }
 
-        lineRenderer.enabled = true;
-        lineRenderer.SetPosition(1, grapplePoint);
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(1, grapplePoint);
+        }       
     }
 
     private void ExecuteGrapple()

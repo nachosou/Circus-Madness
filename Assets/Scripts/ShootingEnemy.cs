@@ -1,4 +1,5 @@
 using UnityEngine;
+using AK.Wwise;
 
 public class ShootingEnemy : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ShootingEnemy : MonoBehaviour
 
     private float shootTimer;
     private bool isAttacking;
+
+    public AK.Wwise.Event wwiseEvent;
 
     private void Start()
     {
@@ -54,7 +57,8 @@ public class ShootingEnemy : MonoBehaviour
         if (shootTimer <= 0.0f)
         {
             ShootAction(); 
-            shootTimer = shootCoolDown;           
+            shootTimer = shootCoolDown;
+            wwiseEvent.Post(gameObject);
         }
         else
         {
@@ -76,5 +80,11 @@ public class ShootingEnemy : MonoBehaviour
             projScript.SetDamage(damage);
             projScript.SetDirection(direction);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, shootDistance);
     }
 }

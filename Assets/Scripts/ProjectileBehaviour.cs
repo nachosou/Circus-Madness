@@ -35,8 +35,6 @@ public class Projectile : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            Debug.Log("HIT PLAYER");
-
             HealthSystem playerHealth = collision.transform.GetComponent<HealthSystem>();
 
             Rigidbody rb = collision.transform.GetComponent<Rigidbody>();

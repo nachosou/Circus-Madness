@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 359793379124928421}
   - component: {fileID: 7125624004167634121}
   - component: {fileID: -8311721518686068573}
+  - component: {fileID: 6825891213427713325}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -77,13 +78,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e64450119aac245a56247c1bd1e292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 18
   groundDrag: 5
   airDrag: 2
-  customGravity: {x: 0, y: -1146, z: 0}
-  jumpForce: 14
+  customGravity: {x: 0, y: -3200, z: 0}
+  jumpForce: 34
   jumpCooldown: 0.5
-  airMultiplier: 0.4
+  airMultiplier: 0.2
   playerHeight: 2
   Ground:
     serializedVersion: 2
@@ -92,6 +93,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   orientation: {fileID: 4900731138525769135}
+  inputReader: {fileID: 0}
+  wwiseEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6eac4d9f735a9704a87672c27a4b9a2b, type: 2}
+  stepInterval: 0.3
 --- !u!114 &7125624004167634121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,17 +117,18 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 1024
-  wallrunForce: 25
-  maxWallrunTime: 5
-  wallRunning: 0
-  walljumpUpForce: 81
-  walljumpForwardForce: 15
-  jumpKey: 32
+  wallrunForce: 400
+  maxWallrunTime: 10
+  isPlayerWallRunning: 0
+  walljumpUpForce: 150
+  walljumpForwardForce: 50
+  walljumpSideForce: 20
   wallCheckDistance: 1
   minJumpHeight: 0.3
   isRunningInLeftWall: 0
   isRunningInRightWall: 0
   orientation: {fileID: 4900731138525769135}
+  inputReader: {fileID: 0}
 --- !u!114 &-8311721518686068573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +142,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+--- !u!114 &6825891213427713325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235264035240329754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3897755289c4e714599dfc7588fed1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &2655173946751255280
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 2655173946751255280}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.794, z: 0}
+  m_LocalPosition: {x: 0, y: 0.964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

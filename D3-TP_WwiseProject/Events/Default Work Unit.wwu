@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{58E29CFD-4964-42F8-8F00-F512829727B9}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{58E29CFD-4964-42F8-8F00-F512829727B9}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{58E29CFD-4964-42F8-8F00-F512829727B9}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Ambient" ID="{B49CB1E2-B6B0-47C7-9AEA-18D8AAB4A905}">
+					<ChildrenList>
+						<Action Name="" ID="{C74EAAF2-7872-4BB7-8EEF-4CA85E3783F5}" ShortID="582875902">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience-CircussMadness" ID="{EE4BB665-F781-491A-957B-0F6FF4C771C2}" WorkUnitID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Knives_Step" ID="{0897FE4A-8FE2-40BC-A0F2-B4CEC7EC29DC}">
+					<ChildrenList>
+						<Action Name="" ID="{C935FD66-E3B2-4583-89B6-C4C2DDD6F7BD}" ShortID="761821713">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footstep_Metal_Knieves_01" ID="{3DAC29DF-01BF-4437-BB94-FAB9C0AAD4E1}" WorkUnitID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Iberu_Attack" ID="{2E63EAE2-147B-4C26-A7B1-47EBDD386652}">
+					<ChildrenList>
+						<Action Name="" ID="{3F3ACB5A-C26A-4AFF-A232-48E9CFB05416}" ShortID="629071277">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Iberu_Attack_03" ID="{7E0BE1BA-EAF8-4988-BCA6-83A586FDB3FA}" WorkUnitID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Steps" ID="{D98F37D8-9198-4545-BFC2-F731197858E6}">
+					<ChildrenList>
+						<Action Name="" ID="{B975E325-21AD-4B58-A893-576760C2A9AA}" ShortID="733601956">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footstep_Wood_02" ID="{FB7914A5-B361-4AB4-BE22-05CD4E29B7D7}" WorkUnitID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Confetti" ID="{936D0AF2-5B42-4738-940E-837886DBF81F}">
+					<ChildrenList>
+						<Action Name="" ID="{C0BC8FA6-045D-4463-B268-9B10ECFD92BD}" ShortID="1002870174">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Confetti_Sound" ID="{C925BA10-FBB3-4FC6-A706-B2978FD698E5}" WorkUnitID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

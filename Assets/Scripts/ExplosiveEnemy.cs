@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using AK.Wwise;
 
 public class ExplosiveEnemy : MonoBehaviour
 {
     [SerializeField] Transform player;
+    [SerializeField] ParticleSystem confetti;
 
     private BugbamuAnimationHandler bugbamuAnimationHandler;    
 
@@ -19,6 +21,8 @@ public class ExplosiveEnemy : MonoBehaviour
     private bool hasToExplode;
     private bool isExploding;
     private bool isAttacking;
+
+    public AK.Wwise.Event wwiseEvent;
 
     private void Start()
     {
@@ -113,12 +117,16 @@ public class ExplosiveEnemy : MonoBehaviour
             }
         }
 
+        Instantiate(confetti, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+        wwiseEvent.Post(gameObject);
         Destroy(gameObject);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius); 
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, followDistance); 
     }
 }

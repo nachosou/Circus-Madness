@@ -1,6 +1,5 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using AK.Wwise;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+    private float coyoteTime = 0.2f; 
+    private float coyoteTimeCounter;
+
     private Vector3 startPos;
 
     private KeyCode reset = KeyCode.O;
@@ -22,8 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public float playerHeight;
     public LayerMask Ground;
     public LayerMask Grappleable;
-    bool grounded;
+    bool IsPlayerOnGround;
     bool inGrappleable;
+    bool IsPlayerMoving;
 
     public Transform orientation;
     private Vector2 inputDir;
@@ -31,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField] InputReader inputReader;
+    public AK.Wwise.Event wwiseEvent;
+
+    public float stepInterval = 0.1f;
+    private float stepTimer;
 
     private void Start()
     {
@@ -56,8 +63,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+        IsPlayerOnGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
         inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Grappleable);
+
+        if (IsPlayerOnGround || inGrappleable)
+        {
+            coyoteTimeCounter = coyoteTime; 
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        IsPlayerMoving = inputDir.magnitude > 0.1f;
+
+        if (IsPlayerMoving && IsPlayerOnGround)
+        {
+            stepTimer += Time.deltaTime;
+
+            if (stepTimer >= stepInterval)
+            {
+                wwiseEvent.Post(gameObject);
+                stepTimer = 0f; 
+            }
+        }
+        else
+        {
+            stepTimer = 0f;
+        }
+
 
         if (Input.GetKey(reset))
         {
@@ -70,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         rb.AddForce(customGravity * Time.fixedDeltaTime, ForceMode.Acceleration);
 
-        if (grounded || inGrappleable)
+        if (IsPlayerOnGround || inGrappleable)
         {
             rb.drag = groundDrag;
         }
@@ -87,12 +121,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttemptJump()
     {
-        if (readyToJump && grounded || readyToJump && inGrappleable)
+        if (readyToJump && (IsPlayerOnGround || inGrappleable || coyoteTimeCounter > 0f))
         {
             readyToJump = false;
-
             Jump();
-
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
@@ -115,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 groundNormal = GetGroundNormal();
         Vector3 adjustedDirection = Vector3.ProjectOnPlane(moveDirection, groundNormal).normalized;
 
-        float multiplier = (grounded || inGrappleable) ? 10f : 10f * airMultiplier;
+        float multiplier = (IsPlayerOnGround || inGrappleable) ? 10f : 10f * airMultiplier;
         rb.AddForce(adjustedDirection * moveSpeed * multiplier, ForceMode.Force);
     }
 

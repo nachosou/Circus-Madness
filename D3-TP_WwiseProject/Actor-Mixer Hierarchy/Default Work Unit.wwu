@@ -1,6 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}" SchemaVersion="110">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B7879AEC-8992-4F60-B2A8-4F1C9DC6AE06}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Iberu_Attack_03" ID="{7E0BE1BA-EAF8-4988-BCA6-83A586FDB3FA}" ShortID="1068136634">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Iberu_Attack_03" ID="{0FA05622-141B-48DB-8780-D5FD32A84635}">
+							<Language>SFX</Language>
+							<AudioFile>Iberu_Attack_03.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="682246755"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Iberu_Attack_03" ID="{0FA05622-141B-48DB-8780-D5FD32A84635}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Footstep_Metal_Knieves_01" ID="{3DAC29DF-01BF-4437-BB94-FAB9C0AAD4E1}" ShortID="227524042">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Footstep_Metal_Knieves_01" ID="{CEB08485-FD51-4DF9-8BED-E08ADC26F088}">
+							<Language>SFX</Language>
+							<AudioFile>Footstep_Metal_Knieves_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1030807373"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Footstep_Metal_Knieves_01" ID="{CEB08485-FD51-4DF9-8BED-E08ADC26F088}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Ambience-CircussMadness" ID="{EE4BB665-F781-491A-957B-0F6FF4C771C2}" ShortID="136979008">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{7430934E-CF13-4121-B948-CC1F50EC7808}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambience-CircussMadness" ID="{146A7BF1-C955-4699-8D84-867C5F05B866}">
+							<PropertyList>
+								<Property Name="LoopEnd" Type="Real64" Value="39.1308615049073"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Ambience-CircussMadness.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="874844685"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambience-CircussMadness" ID="{146A7BF1-C955-4699-8D84-867C5F05B866}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Footstep_Wood_02" ID="{FB7914A5-B361-4AB4-BE22-05CD4E29B7D7}" ShortID="670395822">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Footstep_Wood_02" ID="{24A9209A-6C4E-4723-A7EC-2C79B9FC0A70}">
+							<Language>SFX</Language>
+							<AudioFile>Footstep_Wood_02.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1045389676"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Footstep_Wood_02" ID="{24A9209A-6C4E-4723-A7EC-2C79B9FC0A70}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Confetti_Sound" ID="{C925BA10-FBB3-4FC6-A706-B2978FD698E5}" ShortID="714642415">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1FD5F7CC-3ED9-43CA-A87A-BB0A5B990236}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{ED924480-C680-4037-99CE-37DB055F5C5C}" WorkUnitID="{72DAA7A6-41EB-41F1-8B03-81F3FDFF22E1}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Confetti_Sound" ID="{C8D08E05-145E-4ADB-A77A-20D51A3E1A48}">
+							<Language>SFX</Language>
+							<AudioFile>Confetti_Sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="228559159"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Confetti_Sound" ID="{C8D08E05-145E-4ADB-A77A-20D51A3E1A48}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

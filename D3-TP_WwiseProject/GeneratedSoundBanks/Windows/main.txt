@@ -1,0 +1,14 @@
+Event	ID	Name			Wwise Object Path	Notes
+	77978275	Ambient			\Default Work Unit\Ambient	
+	831234954	Play_Confetti			\Default Work Unit\Play_Confetti	
+	1646441721	Play_Knives_Step			\Default Work Unit\Play_Knives_Step	
+	2813079730	Play_Iberu_Attack			\Default Work Unit\Play_Iberu_Attack	
+	3671582065	Play_Player_Steps			\Default Work Unit\Play_Player_Steps	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	228559159	Confetti_Sound	D:\Unity Projects\D3-TP\D3-TP_WwiseProject\.cache\Windows\SFX\Confetti_Sound_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Confetti_Sound		352896
+	682246755	Iberu_Attack_03	D:\Unity Projects\D3-TP\D3-TP_WwiseProject\.cache\Windows\SFX\Iberu_Attack_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Iberu_Attack_03		47148
+	874844685	Ambience-CircussMadness	D:\Unity Projects\D3-TP\D3-TP_WwiseProject\.cache\Windows\SFX\Ambience-CircussMadness_EED770DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience-CircussMadness		7144344
+	1030807373	Footstep_Metal_Knieves_01	D:\Unity Projects\D3-TP\D3-TP_WwiseProject\.cache\Windows\SFX\Footstep_Metal_Knieves_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep_Metal_Knieves_01		107732
+	1045389676	Footstep_Wood_02	D:\Unity Projects\D3-TP\D3-TP_WwiseProject\.cache\Windows\SFX\Footstep_Wood_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep_Wood_02		89584
+
