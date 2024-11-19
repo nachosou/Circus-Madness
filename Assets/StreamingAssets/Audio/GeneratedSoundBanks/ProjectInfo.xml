@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo>
-	<Project Name="D3-TP_WwiseProject" GUID="{18C92208-4CC5-476C-B122-C123529042BF}" Generator="2022.1.17.8543"/>
+	<Project Name="D3-TP_WwiseProject" GUID="{18C92208-4CC5-476C-B122-C123529042BF}" Generator="2022.1.10.8393"/>
 	<CacheRoot>../../../../D3-TP_WwiseProject/.cache</CacheRoot>
 	<Platforms>
 		<Platform Name="Mac" GUID="{7497F89E-B8B9-416F-A7C7-9145CAB0C21A}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../D3-TP_WwiseProject/GeneratedSoundBanks/Mac"/>
@@ -9,5 +9,5 @@
 	<Languages>
 		<Language Name="English(US)" Id="684519430" GUID="{ED5347C4-4BC8-48CC-ABC4-8A5C712A98A9}" Default="true" UseAsStandIn="true"/>
 	</Languages>
-	<FileHash>{90982515-2B51-F94A-86E9-F8C259EF8140}</FileHash>
+	<FileHash>{B36004C9-B483-B74E-E12F-B3D94A7824D5}</FileHash>
 </ProjectInfo>
