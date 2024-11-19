@@ -9,8 +9,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] private HealthSystem playerHealth;
     [SerializeField] private LoseHandler loseHandler;
 
-    private KeyCode nextLevelButton = KeyCode.N;
-
     private void Start()
     {
         Time.timeScale = 1.0f;
@@ -18,16 +16,7 @@ public class LevelController : MonoBehaviour
 
     private void Update()
     {
-        AdvanceLevelIfPressedButton();
         ResetLevelIfPlayerDies();
-    }
-
-    private void AdvanceLevelIfPressedButton()
-    {
-        if (Input.GetKey(nextLevelButton))
-        {
-            AdvanceToNextLevel();
-        }
     }
 
     public void AdvanceToNextLevel()

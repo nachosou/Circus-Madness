@@ -21,7 +21,6 @@ public class GunSystem : MonoBehaviour
     bool reloading;
 
     public RaycastHit rayHit;
-    public KeyCode shootKey = KeyCode.Mouse0;
 
     Vector3 direction;
 
@@ -39,27 +38,18 @@ public class GunSystem : MonoBehaviour
 
     private void Update()
     {
-        //UpdateBulletsMagazine();
         CheckShoot();
     }
 
-    //private void UpdateBulletsMagazine()
-    //{
-    //    bulletsMagazine.text = (bulletsLeft + " / " + magazineSize);
-    //}
-
     private void CheckShoot()
     {
-        if (readyToShoot && !reloading && bulletsLeft > 0 && Input.GetKeyUp(shootKey))
+        if (readyToShoot && !reloading && bulletsLeft > 0)
         {
             bulletsShot = bulletsPerTap;
             Shoot();
         }
 
-        if (Input.GetKeyDown("r"))
-        {
-            Reload();
-        }
+        Reload();
     }
 
     public void Shoot()
@@ -90,11 +80,11 @@ public class GunSystem : MonoBehaviour
         bulletsLeft--;
         bulletsShot--;
 
-        Invoke("ResetShoot", timeBetweenShooting);
+        Invoke(nameof(ResetShoot), timeBetweenShooting);
 
         if (bulletsShot > 0 && bulletsLeft > 0)
         {
-            Invoke("Shoot", timeBetweenShots);
+            Invoke(nameof(Shoot), timeBetweenShots);
         }
     }
 
@@ -107,7 +97,7 @@ public class GunSystem : MonoBehaviour
     private void Reload()
     {
         reloading = true;
-        Invoke("ReloadFinished", reloadTime);
+        Invoke(nameof(ReloadFinished), reloadTime);
     }
 
     private void ReloadFinished()
