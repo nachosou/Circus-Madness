@@ -8435,6 +8435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 322568329737822558, guid: 4614c4b683daf3142a2cd88369683568, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 430065817899315863, guid: 4614c4b683daf3142a2cd88369683568, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.11978805
