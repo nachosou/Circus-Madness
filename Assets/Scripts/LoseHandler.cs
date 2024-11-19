@@ -6,6 +6,8 @@ public class LoseHandler : MonoBehaviour
     [SerializeField] private LevelController levelController;
     private Canvas loseCanvas;
 
+    [SerializeField] private string mainMenuScene = "MainMenu";
+
     public bool hasPlayerDied;
 
     private void Start()
@@ -34,7 +36,7 @@ public class LoseHandler : MonoBehaviour
     public void MenuButton()
     {
         NavigationManager.Instance?.UnloadScene(levelController.thisLevelName);
-        NavigationManager.Instance?.LoadScene("MainMenu");
+        NavigationManager.Instance?.LoadScene(mainMenuScene);
         hasPlayerDied = false;
     }
 

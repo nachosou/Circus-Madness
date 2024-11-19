@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinHandler : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class WinHandler : MonoBehaviour
     private Canvas winCanvas;
 
     public bool hasPlayerWon;
+
+    [SerializeField] private string mainMenuScene = "MainMenu";
 
     private void Start()
     {
@@ -33,21 +36,27 @@ public class WinHandler : MonoBehaviour
     public void GoToNextLevel()
     {
         NavigationManager.Instance.UnloadScene(levelController.thisLevelName);
-        NavigationManager.Instance.LoadScene(levelController.nextLevelName);
+        NavigationManager.Instance.LoadScene(levelController.nextLevelName, true);
         hasPlayerWon = false;
+
+        Scene activeScene = SceneManager.GetSceneByName(levelController.nextLevelName);
+        SceneManager.SetActiveScene(activeScene);
     }
 
     public void RestartLevel()
     {
         NavigationManager.Instance.UnloadScene(levelController.thisLevelName);
-        NavigationManager.Instance.LoadScene(levelController.thisLevelName);
+        NavigationManager.Instance.LoadScene(levelController.thisLevelName, true);
         hasPlayerWon = false;
+
+        Scene activeScene = SceneManager.GetSceneByName(levelController.thisLevelName);
+        SceneManager.SetActiveScene(activeScene);
     }    
 
     public void GoToMenu()
     {
         NavigationManager.Instance.UnloadScene(levelController.thisLevelName);
-        NavigationManager.Instance.LoadScene("MainMenu");
+        NavigationManager.Instance.LoadScene(mainMenuScene);
         hasPlayerWon = false;
     }
 
