@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Image Campus
   productName: Circus Madness
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: c7dbebba57756a14aa70d8139a30b194, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -44,8 +44,6 @@ PlayerSettings:
     duration: 2
   - logo: {fileID: 21300000, guid: 8249e7b08d2e4684ca5baca50bff0e65, type: 3}
     duration: 2
-  - logo: {fileID: 21300000, guid: 5ace12166b819f849aa17e7e5315edcd, type: 3}
-    duration: 3
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 8249e7b08d2e4684ca5baca50bff0e65, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -300,7 +298,7 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: a760934109e3ece4e927293c4bb4908a, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0
@@ -330,12 +328,12 @@ PlayerSettings:
       m_Height: 48
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 3a1c645b212d0104a9da08ee8e79a88c, type: 3}
       m_Width: 32
       m_Height: 32
       m_Kind: 0
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: e773bb4e05d931a438e8d24b4562aa51, type: 3}
       m_Width: 16
       m_Height: 16
       m_Kind: 0

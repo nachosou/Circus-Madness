@@ -8,6 +8,8 @@ public class InputReader : MonoBehaviour
     public Action OnGrappling;
     public Action<Vector2> OnMove;
     public Action OnPause;
+    public Action OnStartGame;
+    public Action OnExitGame;
     public Action<Vector2> OnMoveCamera;
     public static bool isUsingController = false;
 
@@ -20,6 +22,22 @@ public class InputReader : MonoBehaviour
         else if (context.devices[0] is Gamepad)
         {
             isUsingController = true;
+        }
+    }
+
+    public void HandleStartGameInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnStartGame?.Invoke();
+        }
+    }
+
+    public void HandleStartGameESCInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnExitGame?.Invoke();
         }
     }
 

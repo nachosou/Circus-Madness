@@ -5068,6 +5068,10 @@ PrefabInstance:
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 845391001}
+    - target: {fileID: 4150283822206427890, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5905921584840289662, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
       propertyPath: m_UseWorldSpace
       value: 1

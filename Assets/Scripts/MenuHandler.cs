@@ -5,6 +5,7 @@ public class MenuHandler : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuCanvas;
     [SerializeField] private GameObject creditsCanvas;
+    [SerializeField] private GameObject optionsCanvas;
 
     [SerializeField] private string mainMenuScene = "MainMenu";
     [SerializeField] private string tutorialScene = "Tutorial";
@@ -29,6 +30,18 @@ public class MenuHandler : MonoBehaviour
     {
         creditsCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
+    }
+
+    public void OpenOptions()
+    {
+        mainMenuCanvas.SetActive(false);
+        optionsCanvas.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        mainMenuCanvas.SetActive(true);
+        optionsCanvas.SetActive(false);
     }
 
     public void QuitGame()
