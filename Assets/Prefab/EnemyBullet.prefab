@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1500
-  speed: 5000
+  speed: 400
