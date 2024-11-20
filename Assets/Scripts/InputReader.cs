@@ -9,6 +9,19 @@ public class InputReader : MonoBehaviour
     public Action<Vector2> OnMove;
     public Action OnPause;
     public Action<Vector2> OnMoveCamera;
+    public static bool isUsingController = false;
+
+    public void HandleInputSourceChange(PlayerInput context)
+    {
+        if (context.devices[0] is Mouse || context.devices[0] is Keyboard)
+        {
+            isUsingController = false;
+        }
+        else if (context.devices[0] is Gamepad)
+        {
+            isUsingController = true;
+        }
+    }
 
     public void HandleJumpInput(InputAction.CallbackContext context)
     {

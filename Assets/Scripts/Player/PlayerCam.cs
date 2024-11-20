@@ -52,6 +52,20 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, WallRunTilt());
     }
 
+    private void ChangeSensDependingOnInputSource()
+    {
+        if (InputReader.isUsingController)
+        {
+            sensX /= 10;
+            sensY /= 10;
+        }
+        else
+        {
+            sensX *= 10;
+            sensY *= 10;
+        }
+    }
+
     private void AttemptCameraMove(Vector2 dir)
     {
         mouse.x = dir.x * Time.deltaTime * sensX;

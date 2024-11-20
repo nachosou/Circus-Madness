@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 startPos;
 
-    private KeyCode reset = KeyCode.O;
-
     public float playerHeight;
     public LayerMask Ground;
     public LayerMask Grappleable;
@@ -90,12 +88,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             stepTimer = 0f;
-        }
-
-
-        if (Input.GetKey(reset))
-        {
-            transform.position = startPos;
         }
     }
 
