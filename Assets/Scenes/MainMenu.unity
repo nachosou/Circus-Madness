@@ -895,8 +895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -756.5899}
-  m_SizeDelta: {x: 0, y: 1513.1798}
+  m_AnchoredPosition: {x: 0, y: -777.6543}
+  m_SizeDelta: {x: 0, y: 1574.8484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1121668510
 MonoBehaviour:
@@ -918,14 +918,97 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Programming\nIgnacio Gonzalez Souza\n\nArtists\nPatricio Julian Salguero\nDharma
-    Daiana Massenzio\nTobias Pedrozo\nMaria Laura Salinas\n\nAudio\nMiguel Ojeda\n\nQA\nIgnacio
-    Pourteau\n Juan Manuel Palferro Jerez\n Juan Pablo Pivetta\n Melissa Villarruel\n
-    Patricia\_Tacchella\n\nThis game was also possible thanks to the support of\n\nProfessors\nSergio
-    Baretto\nJuan Pablo Varela Aloisio\nRamiro Cabrera\nEugenio Taboada\nNazareno
-    Rivero\nLucia Patetta\n\nTeaching assistants\nRocio Gimenez\nIgnacio Arrastua\nLautaro
-    Lajmanovich\nManuel Sanchez \nLucio Ary Clementino\nFlorencia Giordano\n\nand
-    all Image\_Campus\_Staff!"
+  m_text: '<b><size=56><color=#800080>Programming</color></size></b>
+
+    <color=#000000><size=50>Ignacio
+    Gonzalez Souza</size></color>
+
+    
+
+    <b><size=56><color=#800080>Artists</color></size></b>
+
+    <color=#000000><size=50>Patricio
+    Julian Salguero</size></color>
+
+    <color=#000000><size=50>Dharma Daiana Massenzio</size></color>
+
+    <color=#000000><size=50>Tobias
+    Pedrozo</size></color>
+
+    <color=#000000><size=50>Maria Laura Salinas</size></color>
+
+    
+
+    <b><size=56><color=#800080>Audio</color></size></b>
+
+    <color=#000000><size=50>Miguel
+    Ojeda</size></color>
+
+    
+
+    <b><size=56><color=#800080>QA</color></size></b>
+
+    <color=#000000><size=50>Ignacio
+    Pourteau</size></color>
+
+    <color=#000000><size=50>Juan Manuel Palferro Jerez</size></color>
+
+    <color=#000000><size=50>Juan
+    Pablo Pivetta</size></color>
+
+    <color=#000000><size=50>Melissa Villarruel</size></color>
+
+    <color=#000000><size=50>Patricia
+    Tacchella</size></color>
+
+    
+
+    <b><size=56><color=#800080>This game was
+    also possible thanks to the support of</color></size></b>
+
+    
+
+    <b><size=56><color=#800080>Professors</color></size></b>
+
+    <color=#000000><size=50>Sergio
+    Baretto</size></color>
+
+    <color=#000000><size=50>Juan Pablo Varela Aloisio</size></color>
+
+    <color=#000000><size=50>Ramiro
+    Cabrera</size></color>
+
+    <color=#000000><size=50>Eugenio Taboada</size></color>
+
+    <color=#000000><size=50>Nazareno
+    Rivero</size></color>
+
+    <color=#000000><size=50>Lucia Patetta</size></color>
+
+    
+
+    <b><size=56><color=#800080>Teaching
+    assistants</color></size></b>
+
+    <color=#000000><size=50>Rocio Gimenez</size></color>
+
+    <color=#000000><size=50>Ignacio
+    Arrastua</size></color>
+
+    <color=#000000><size=50>Lautaro Lajmanovich</size></color>
+
+    <color=#000000><size=50>Manuel
+    Sanchez</size></color>
+
+    <color=#000000><size=50>Lucio Ary Clementino</size></color>
+
+    <color=#000000><size=50>Florencia
+    Giordano</size></color>
+
+    
+
+    <b><size=56><color=#800080>and all Image
+    Campus Staff!</color></size></b>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f542840a0f16c7f44b2083fe0b4a5c9a, type: 2}
   m_sharedMaterial: {fileID: -6483274778059547627, guid: f542840a0f16c7f44b2083fe0b4a5c9a, type: 2}
@@ -988,7 +1071,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 19.541504, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2630,8 +2713,8 @@ RectTransform:
   - {fileID: 1121668509}
   m_Father: {fileID: 1932158964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.26521155, y: 0.16694291}
-  m_AnchorMax: {x: 0.7557072, y: 0.8405541}
+  m_AnchorMin: {x: 0.26625323, y: 0.16694291}
+  m_AnchorMax: {x: 0.7557072, y: 0.8574074}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
