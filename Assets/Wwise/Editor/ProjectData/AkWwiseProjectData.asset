@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: a6a7da72eb41f1418b0381f3fdff22e1
     GuidInternal: 
-    m_lastTime: -8584698738886770808
+    m_lastTime: -8584695567811401713
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -227,8 +227,50 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2a9daed8ffec7545ab9d805039334bb8
     GuidInternal: 
-    m_lastTime: -8584705800922775457
-    List: []
+    m_lastTime: -8584695567813143508
+    List:
+    - name: Master
+      guid: f4119046cb98e042969861b797241f35
+      id: 4056684167
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2a9daed8ffec7545ab9d805039334bb8
+      - ElementName: Master
+        ObjectType: 13
+        guid: f4119046cb98e042969861b797241f35
+      Path: Game Parameters\Default Work Unit\Master
+    - name: Music
+      guid: 0f1aee922e52734498509b4ba969fa87
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2a9daed8ffec7545ab9d805039334bb8
+      - ElementName: Music
+        ObjectType: 13
+        guid: 0f1aee922e52734498509b4ba969fa87
+      Path: Game Parameters\Default Work Unit\Music
+    - name: SFX
+      guid: 52e0849ac1fb554b806247aa584821aa
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2a9daed8ffec7545ab9d805039334bb8
+      - ElementName: SFX
+        ObjectType: 13
+        guid: 52e0849ac1fb554b806247aa584821aa
+      Path: Game Parameters\Default Work Unit\SFX
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:

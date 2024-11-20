@@ -469,6 +469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 0}
   creditsCanvas: {fileID: 0}
+  mainMenuScene: MainMenu
+  tutorialScene: Tutorial
 --- !u!1 &891389714
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +858,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 1914882590}
   creditsCanvas: {fileID: 1932158960}
+  mainMenuScene: MainMenu
+  tutorialScene: Tutorial
 --- !u!1 &1121668508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 1914882590}
   creditsCanvas: {fileID: 1932158960}
+  mainMenuScene: MainMenu
+  tutorialScene: Tutorial
 --- !u!1 &1353423559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 0}
   creditsCanvas: {fileID: 0}
+  mainMenuScene: MainMenu
+  tutorialScene: Tutorial
 --- !u!1 &1633491928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,9 +1516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514dc5e59546c8b4aae0a57e0fc25658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.3
-  minAngle: 15
-  maxAngle: -15
+  rotationSpeed: 0.7
+  minAngle: 7
+  maxAngle: -7
 --- !u!1 &1648315883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 1914882590}
   creditsCanvas: {fileID: 1932158960}
+  mainMenuScene: MainMenu
+  tutorialScene: Tutorial
 --- !u!1 &1963101119
 GameObject:
   m_ObjectHideFlags: 0
