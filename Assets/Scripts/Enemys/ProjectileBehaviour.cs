@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody projectileRB;
     public float speed;
 
+    [SerializeField] private string playerTagName = "Player";
+
     private void Start()
     {
         projectileRB = GetComponent<Rigidbody>();
@@ -33,7 +35,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag(playerTagName))
         {
             HealthSystem playerHealth = collision.transform.GetComponent<HealthSystem>();
 

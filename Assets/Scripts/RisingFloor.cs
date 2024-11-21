@@ -3,6 +3,7 @@ using UnityEngine;
 public class RisingFloor : MonoBehaviour
 {
     public float speed;
+    [SerializeField] private string playerTagName = "Player";
 
     private void Update()
     {
@@ -16,7 +17,7 @@ public class RisingFloor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag(playerTagName))
         {
             HealthSystem playerHealth = collision.gameObject.GetComponent<HealthSystem>();
 

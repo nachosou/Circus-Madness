@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        IsPlayerOnGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+        IsPlayerOnGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f);
         inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Grappleable);
 
         if (IsPlayerOnGround || inGrappleable)

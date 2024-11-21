@@ -10,6 +10,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private LevelController levelController;
     [SerializeField] private InputReader inputReader;
 
+    [SerializeField] private string SceneName = "MainMenu";
+
     private bool isPauseActive;
 
     private void Start()
@@ -63,7 +65,7 @@ public class PauseManager : MonoBehaviour
         pauseCanvas.enabled = false;
         Time.timeScale = 1.0f;
         NavigationManager.Instance.UnloadScene(levelController.thisLevelName);
-        NavigationManager.Instance.LoadScene("MainMenu");
+        NavigationManager.Instance.LoadScene(SceneName);
     }   
 
     public void ResetLevel()
