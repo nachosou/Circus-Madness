@@ -48,8 +48,8 @@ public class Projectile : MonoBehaviour
 
             if (rb != null && playerMovement != null)
             {
-                float auxDrag = playerMovement.groundDrag;
-                playerMovement.groundDrag = 0;
+                float auxDrag = playerMovement.playerData.groundDrag;
+                playerMovement.playerData.groundDrag = 0;
 
                 moveDirection.y = 0;
 
@@ -68,7 +68,7 @@ public class Projectile : MonoBehaviour
 
     private IEnumerator RestoreDrag(PlayerMovement playerMovement, float originalDrag)
     {       
-        playerMovement.groundDrag = originalDrag;
+        playerMovement.playerData.groundDrag = originalDrag;
         yield return new WaitForSeconds(0.1f);
     }
 }

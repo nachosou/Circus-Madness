@@ -3,15 +3,10 @@ using AK.Wwise;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    [SerializeField] public PlayerData playerData;
 
-    public float groundDrag;
-    public float airDrag;
     public Vector3 customGravity;
 
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
     bool readyToJump;
 
     private float coyoteTime = 0.2f; 
@@ -98,11 +93,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsPlayerOnGround || inGrappleable)
         {
-            rb.drag = groundDrag;
+            rb.drag = playerData.groundDrag;
         }
         else
         {
-            rb.drag = airDrag;
+            rb.drag = playerData.airDrag;
         }
     }
 
@@ -117,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         {
             readyToJump = false;
             Jump();
-            Invoke(nameof(ResetJump), jumpCooldown);
+            Invoke(nameof(ResetJump), playerData.jumpCooldown);
         }
     }
 
@@ -139,15 +134,15 @@ public class PlayerMovement : MonoBehaviour
         Vector3 groundNormal = GetGroundNormal();
         Vector3 adjustedDirection = Vector3.ProjectOnPlane(moveDirection, groundNormal).normalized;
 
-        float multiplier = (IsPlayerOnGround || inGrappleable) ? 10f : 10f * airMultiplier;
-        rb.AddForce(adjustedDirection * moveSpeed * multiplier, ForceMode.Force);
+        float multiplier = (IsPlayerOnGround || inGrappleable) ? 10f : 10f * playerData.airMultiplier;
+        rb.AddForce(adjustedDirection * playerData.moveSpeed * multiplier, ForceMode.Force);
     }
 
     private void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * playerData.jumpForce, ForceMode.Impulse);
     }
 
     private void ResetJump()
