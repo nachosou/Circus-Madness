@@ -11,7 +11,16 @@ public class InputReader : MonoBehaviour
     public Action OnStartGame;
     public Action OnExitGame;
     public Action<Vector2> OnMoveCamera;
+    public Action OnNavigation;
     public static bool isUsingController = false;
+
+    public void HandleUIGamepadNavigation(InputAction.CallbackContext context)
+    {
+        if (context.started) 
+        {
+            OnNavigation?.Invoke();
+        }
+    }
 
     public void HandleInputSourceChange(PlayerInput context)
     {

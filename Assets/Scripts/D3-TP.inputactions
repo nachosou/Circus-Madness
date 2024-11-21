@@ -311,6 +311,17 @@
                     "action": "EnterGameOnStart",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3f2670d-68f6-4cfd-9061-2ed5389a3355",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EnterGameOnStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

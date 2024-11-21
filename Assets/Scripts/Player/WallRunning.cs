@@ -140,9 +140,13 @@ public class WallRunning : MonoBehaviour
 
         Vector3 forwardForce = wallForward * walljumpForwardForce;
         Vector3 sideForce = (isRunningInRightWall ? -orientation.right : orientation.right) * walljumpSideForce;
+        sideForce.y = 0f;
 
         Vector3 forceToApply = (transform.up * walljumpUpForce + forwardForce + sideForce).normalized * walljumpForwardForce;
 
+        Debug.DrawRay(transform.position, forwardForce, Color.red, 10f);
+        Debug.DrawRay(transform.position, sideForce, Color.green, 10f);
+        Debug.DrawRay(transform.position, forceToApply, Color.blue, 10f);
         rb.velocity = Vector3.zero;
 
         rb.AddForce(forceToApply, ForceMode.VelocityChange);
