@@ -8,6 +8,5 @@ public class PreselectCanvasButton : MonoBehaviour
     private void OnEnable()
     {
         preselectButton.SetPreselectedButton(button);
-        Debug.Log($"AAAA {button.name}");
     }
 }
