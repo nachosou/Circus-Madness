@@ -30,7 +30,7 @@ public class GamepadUIController : MonoBehaviour
 
     public void ResetPreselectedButton()
     {
-        if (eventSystem != null)
+        if (eventSystem != null && eventSystem.currentSelectedGameObject == null)
         {
             eventSystem.SetSelectedGameObject(selectedButton);
         }

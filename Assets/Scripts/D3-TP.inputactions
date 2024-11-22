@@ -292,11 +292,33 @@
                 },
                 {
                     "name": "",
+                    "id": "db5d832d-43e4-4230-b7e5-bccc553d05bf",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2f4c5c41-32dd-4157-944b-8c4fbba1412f",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "ExitGameOnStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c308e49a-fe6b-48f5-8a08-03a395e5a379",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "ExitGameOnStart",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -318,7 +340,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "EnterGameOnStart",
                     "isComposite": false,
                     "isPartOfComposite": false

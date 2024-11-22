@@ -16,10 +16,7 @@ public class InputReader : MonoBehaviour
 
     public void HandleUIGamepadNavigation(InputAction.CallbackContext context)
     {
-        if (context.started) 
-        {
-            OnNavigation?.Invoke();
-        }
+         OnNavigation?.Invoke();
     }
 
     public void HandleInputSourceChange(PlayerInput context)

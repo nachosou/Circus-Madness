@@ -5,7 +5,7 @@ public class TutorialCanvasHandler : MonoBehaviour
 {
     [SerializeField] private Image[] images = new Image[3]; 
     [SerializeField] private Image displayImage; 
-    [SerializeField] private Canvas tutorialCanvas;
+    [SerializeField] private GameObject tutorialCanvas;
 
     private int currentIndex = 0;
 
@@ -46,7 +46,7 @@ public class TutorialCanvasHandler : MonoBehaviour
 
     public void HideMenu()
     {
-        tutorialCanvas.gameObject.SetActive(false);
+        tutorialCanvas.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

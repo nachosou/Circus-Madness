@@ -9,11 +9,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] private HealthSystem playerHealth;
     [SerializeField] private LoseHandler loseHandler;
 
-    private void Start()
-    {
-        Time.timeScale = 1.0f;
-    }
-
     private void Update()
     {
         ResetLevelIfPlayerDies();

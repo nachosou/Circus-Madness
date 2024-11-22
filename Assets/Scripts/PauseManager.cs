@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private Canvas pauseCanvas;
-    [SerializeField] private Canvas optionsCanvas;
-    [SerializeField] private Canvas gameplayCanvas;
+    [SerializeField] private GameObject pauseCanvas;
+    [SerializeField] private GameObject optionsCanvas;
+    [SerializeField] private GameObject gameplayCanvas;
     [SerializeField] private LevelController levelController;
     [SerializeField] private InputReader inputReader;
 
@@ -16,8 +16,8 @@ public class PauseManager : MonoBehaviour
 
     private void Start()
     {
-        pauseCanvas.enabled = false;
-        optionsCanvas.enabled = false;
+        pauseCanvas.SetActive(false);
+        optionsCanvas.SetActive(false);
         isPauseActive = false;
     }
 
@@ -43,8 +43,8 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;      
         isPauseActive = true;      
-        pauseCanvas.enabled = true;
-        gameplayCanvas.enabled = false;  
+        pauseCanvas.SetActive(true);
+        gameplayCanvas.SetActive(true);  
         Cursor.lockState = CursorLockMode.None;  
         Cursor.visible = true;        
     }
@@ -53,8 +53,8 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;    
         isPauseActive = false;        
-        pauseCanvas.enabled = false;
-        gameplayCanvas.enabled = true; 
+        pauseCanvas.SetActive(false);
+        gameplayCanvas.SetActive(true); 
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false;       
     }
@@ -62,7 +62,7 @@ public class PauseManager : MonoBehaviour
     public void MenuButton()
     {
         isPauseActive = false;
-        pauseCanvas.enabled = false;
+        pauseCanvas.SetActive(false);
         Time.timeScale = 1.0f;
         NavigationManager.Instance.UnloadScene(levelController.thisLevelName);
         NavigationManager.Instance.LoadScene(SceneName);
@@ -86,13 +86,13 @@ public class PauseManager : MonoBehaviour
 
     public void OpenOptions()
     {
-        pauseCanvas.enabled = false;
-        optionsCanvas.enabled = true;
+        pauseCanvas.SetActive(false);
+        optionsCanvas.SetActive(true);
     }
 
     public void CloseOptions()
     {
-        optionsCanvas.enabled = false;
-        pauseCanvas.enabled = true;
+        optionsCanvas.SetActive(false);
+        pauseCanvas.SetActive(true);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class LoseHandler : MonoBehaviour
 {
     [SerializeField] private LevelController levelController;
-    private Canvas loseCanvas;
+    [SerializeField] private GameObject loseCanvas;
 
     [SerializeField] private string mainMenuScene = "MainMenu";
 
@@ -12,8 +12,7 @@ public class LoseHandler : MonoBehaviour
 
     private void Start()
     {
-        loseCanvas = GetComponent<Canvas>();
-        loseCanvas.enabled = false;
+        loseCanvas.SetActive(false);
         hasPlayerDied = false;
     }
 
@@ -28,7 +27,7 @@ public class LoseHandler : MonoBehaviour
     private void ActivateLoseCanvas()
     {
         Time.timeScale = 0.0f;
-        loseCanvas.enabled = true;
+        loseCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;       
     }

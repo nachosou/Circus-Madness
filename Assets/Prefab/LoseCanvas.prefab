@@ -84,14 +84,14 @@ GameObject:
   - component: {fileID: 404240253387909190}
   - component: {fileID: 3069161978067735020}
   - component: {fileID: 3501183670782490163}
-  - component: {fileID: 699367704997662594}
+  - component: {fileID: 3628571186797075319}
   m_Layer: 5
   m_Name: LoseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1444434550329307931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &699367704997662594
+--- !u!114 &3628571186797075319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,11 +186,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959596361058704838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb0ec926acb0404bb3f502d1a83f8b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bd951e4ceb51454ca95b345ad3fd49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 0}
-  hasPlayerDied: 0
+  preselectButton: {fileID: 0}
+  button: {fileID: 4542599907925826164}
 --- !u!1 &4542599907925826164
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 4147299179807760478}
   - component: {fileID: 6556862921382435945}
   - component: {fileID: 2125117759469669302}
+  - component: {fileID: 4838746137508632932}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -289,9 +290,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.509434, g: 0.50222504, b: 0.50222504, a: 1}
+    m_HighlightedColor: {r: 0.9254902, g: 0.7882353, b: 0, a: 0.5803922}
     m_PressedColor: {r: 0.1981132, g: 0.1971787, b: 0.1971787, a: 1}
-    m_SelectedColor: {r: 0.3584906, g: 0.3567996, b: 0.3567996, a: 1}
+    m_SelectedColor: {r: 0.9254902, g: 0.7882353, b: 0, a: 0.5803922}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -311,7 +312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 699367704997662594}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoseHandler, Assembly-CSharp
         m_MethodName: ResetLevel
         m_Mode: 1
@@ -323,6 +324,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4838746137508632932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542599907925826164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa2b7d10d0e4b247a37426faac5eabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7494541023111651687
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +348,7 @@ GameObject:
   - component: {fileID: 2096645879396720652}
   - component: {fileID: 5005893379511254947}
   - component: {fileID: 5061612866063979742}
+  - component: {fileID: 4935878985702449746}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -443,7 +457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 699367704997662594}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoseHandler, Assembly-CSharp
         m_MethodName: MenuButton
         m_Mode: 1
@@ -455,3 +469,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4935878985702449746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494541023111651687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa2b7d10d0e4b247a37426faac5eabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

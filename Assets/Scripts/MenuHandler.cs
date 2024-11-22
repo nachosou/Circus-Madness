@@ -14,10 +14,6 @@ public class MenuHandler : MonoBehaviour
     {
         NavigationManager.Instance?.UnloadScene(mainMenuScene);  
         NavigationManager.Instance?.LoadScene(tutorialScene, true);
-
-        Scene activeScene = SceneManager.GetSceneByName(tutorialScene);
-        SceneManager.SetActiveScene(activeScene);
-        RenderSettings.fog = true;
     }
 
     public void OpenCredits()
