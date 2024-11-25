@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WallRunning : MonoBehaviour
@@ -10,7 +12,6 @@ public class WallRunning : MonoBehaviour
     public bool isPlayerWallRunning;
 
     public float walljumpUpForce;
-    public float walljumpForwardForce;
     public float walljumpSideForce;
 
     public float wallCheckDistance;
@@ -25,8 +26,14 @@ public class WallRunning : MonoBehaviour
     [SerializeField] private InputReader inputReader;
 
     private Rigidbody rb;
-
+    public float maximumUpForce;
+    public float maximumSideForce;
+    public float maximumForwardForce;
     private const int wallRunMultiplyer = 10;
+
+    public float coolDownTime;
+    private bool isOnCoolDown;
+    private Coroutine coolDownCoroutine;
 
     private void Start()
     {
@@ -38,6 +45,7 @@ public class WallRunning : MonoBehaviour
     {
         inputReader.OnMove += AttemptWallRide;
         inputReader.OnJump += AttemptWallJump;
+        isOnCoolDown = false;
     }
 
     private void OnDisable()
@@ -62,8 +70,11 @@ public class WallRunning : MonoBehaviour
 
     private void CheckWall()
     {
-        isRunningInRightWall = Physics.Raycast(transform.position, orientation.right, out rightWallhit, wallCheckDistance, RunnableWall);
-        isRunningInLeftWall = Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, RunnableWall);
+        if (!isOnCoolDown)
+        {
+            isRunningInRightWall = Physics.Raycast(transform.position, orientation.right, out rightWallhit, wallCheckDistance, RunnableWall);
+            isRunningInLeftWall = Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, RunnableWall);
+        }
     }
 
     private bool HighEnough()
@@ -112,6 +123,14 @@ public class WallRunning : MonoBehaviour
     {
         isPlayerWallRunning = false;
         rb.useGravity = true;
+        isOnCoolDown = true;
+
+        if (coolDownCoroutine != null)
+        {
+            StopCoroutine(coolDownCoroutine);
+        }
+
+        coolDownCoroutine = StartCoroutine(WaitCoolDown());
     }
 
     private void WallrunMovement()
@@ -132,25 +151,29 @@ public class WallRunning : MonoBehaviour
 
     private void WallJump()
     {
-        Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
-        Vector3 wallForward = Vector3.Cross(wallNormal, transform.up).normalized;
+        isPlayerWallRunning = false;
 
-        if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
-        {
-            wallForward = -wallForward;
-        }
-
-        Vector3 forwardForce = wallForward * walljumpForwardForce;
         Vector3 sideForce = (isRunningInRightWall ? -orientation.right : orientation.right) * walljumpSideForce;
-        sideForce.y = 0f;
+        sideForce.y = 0f; // Asegurar que no haya fuerza vertical en el lado
 
-        Vector3 forceToApply = (transform.up * walljumpUpForce + forwardForce + sideForce).normalized * walljumpForwardForce;
+        // Fuerza total (sin normalizar)
+        Vector3 forceToApply = (transform.up * walljumpUpForce) + sideForce;
 
-        Debug.DrawRay(transform.position, forwardForce, Color.red, 10f);
-        Debug.DrawRay(transform.position, sideForce, Color.green, 10f);
-        Debug.DrawRay(transform.position, forceToApply, Color.blue, 10f);
-        rb.velocity = Vector3.zero;
+        forceToApply.x = Mathf.Clamp(forceToApply.x, walljumpSideForce, maximumSideForce);
+        forceToApply.y = Mathf.Clamp(forceToApply.y, walljumpUpForce, maximumUpForce);
 
-        rb.AddForce(forceToApply, ForceMode.VelocityChange);
+        // Debug para visualizar las fuerzas
+        Debug.DrawRay(transform.position, sideForce, Color.green, 2f);
+        Debug.DrawRay(transform.position, forceToApply, Color.blue, 2f);
+        Debug.DrawRay(transform.position, new Vector3(0, walljumpUpForce, 0), Color.blue, 2f);
+
+        // Aplicar la fuerza
+        rb.AddForce(forceToApply, ForceMode.Impulse);
+    }
+
+    IEnumerator WaitCoolDown() 
+    { 
+        yield return new WaitForSeconds(coolDownTime);
+        isOnCoolDown = false;
     }
 }

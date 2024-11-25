@@ -2323,18 +2323,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: offSet.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: jumpForce
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: moveSpeed
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: playerData
       value: 
       objectReference: {fileID: 11400000, guid: 00043c5b8834bd249b4fc132df1c18f9, type: 2}
@@ -2342,22 +2330,6 @@ PrefabInstance:
       propertyPath: inputReader
       value: 
       objectReference: {fileID: 1828380641}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: airMultiplier
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: customGravity.y
-      value: -3200
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: raycastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: groundRaycastDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1235264035240329754, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2368,23 +2340,19 @@ PrefabInstance:
       objectReference: {fileID: 1828380641}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: wallrunForce
-      value: 400
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: maxWallrunTime
-      value: 10
+      propertyPath: maximumUpForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpUpForce
-      value: 400
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpSideForce
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: walljumpForwardForce
-      value: 100
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.x

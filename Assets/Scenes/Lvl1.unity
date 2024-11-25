@@ -7458,33 +7458,33 @@ PrefabInstance:
       propertyPath: inputReader
       value: 
       objectReference: {fileID: 673801238}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: stepInterval
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 359793379124928421, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: wwiseEvent.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 6eac4d9f735a9704a87672c27a4b9a2b, type: 2}
     - target: {fileID: 1235264035240329754, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6558019527546986905, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.964
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: inputReader
       value: 
       objectReference: {fileID: 673801238}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: maximumUpForce
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpUpForce
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: maximumSideForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpSideForce
-      value: 20
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: maximumForwardForce
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpForwardForce

@@ -2106,26 +2106,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4051175123633901270, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 8850589454533589176}
-    - target: {fileID: 4051175123633901270, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: dot
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051175123633901270, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: grapplerTip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051175123633901270, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: inputReader
       value: 
       objectReference: {fileID: 736058062}
+    - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: coolDownTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 69.68
@@ -14193,11 +14181,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3952572580489801653}
   m_Mesh: {fileID: -9015686384795481861, guid: 08098e1f4b7ea2c47b285f154b199ef7, type: 3}
---- !u!4 &8850589454533589176 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1276959324844562843, guid: a0f9c786e09cd4e42ad87b91a3fffd4b, type: 3}
-  m_PrefabInstance: {fileID: 744877560167189373}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8850589454533589177
 MonoBehaviour:
   m_ObjectHideFlags: 0
