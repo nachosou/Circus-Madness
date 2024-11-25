@@ -1,9 +1,12 @@
 using UnityEngine;
 using AK.Wwise;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
-{
+{   
     [SerializeField] public PlayerData playerData;
+
+    private string playerLayerName = "Player";
 
     public Vector3 customGravity;
 
@@ -14,12 +17,16 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 startPos;
 
-    public float playerHeight;
+    private float playerHeight;
     public LayerMask Ground;
     public LayerMask Grappleable;
     bool IsPlayerOnGround;
     bool inGrappleable;
     bool IsPlayerMoving;
+
+    public float groundRaycastDistance = 1;
+    private float grapplingRaycastDistance = 0.2f;
+    public Vector3 offSet;
 
     public Transform orientation;
     private Vector2 inputDir;
@@ -32,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public float stepInterval = 0.1f;
     private float stepTimer;
 
+    private const float movementMultiplyer = 10f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
         rb.useGravity = false;
         startPos = transform.position;
+        playerHeight = GetComponentInChildren<CapsuleCollider>().height;
     }
 
     private void OnEnable()
@@ -56,8 +66,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        IsPlayerOnGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f);
-        inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Grappleable);
+        Vector3 rayOrigin = transform.position - offSet;
+        IsPlayerOnGround = Physics.Raycast(rayOrigin, Vector3.down, groundRaycastDistance, ~LayerMask.GetMask(playerLayerName));
+        inGrappleable = Physics.Raycast(transform.position, Vector3.down, playerHeight + grapplingRaycastDistance, Grappleable);
 
         if (IsPlayerOnGround || inGrappleable)
         {
@@ -134,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 groundNormal = GetGroundNormal();
         Vector3 adjustedDirection = Vector3.ProjectOnPlane(moveDirection, groundNormal).normalized;
 
-        float multiplier = (IsPlayerOnGround || inGrappleable) ? 10f : 10f * playerData.airMultiplier;
+        float multiplier = (IsPlayerOnGround || inGrappleable) ? movementMultiplyer : movementMultiplyer * playerData.airMultiplier;
         rb.AddForce(adjustedDirection * playerData.moveSpeed * multiplier, ForceMode.Force);
     }
 

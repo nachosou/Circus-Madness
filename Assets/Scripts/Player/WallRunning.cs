@@ -26,6 +26,8 @@ public class WallRunning : MonoBehaviour
 
     private Rigidbody rb;
 
+    private const int wallRunMultiplyer = 10;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -125,7 +127,7 @@ public class WallRunning : MonoBehaviour
             wallForward = -wallForward;
         }
 
-        rb.AddForce((wallForward * wallrunForce * 10) * Time.fixedDeltaTime, ForceMode.Force);
+        rb.AddForce((wallForward * wallrunForce * wallRunMultiplyer) * Time.fixedDeltaTime, ForceMode.Force);
     }
 
     private void WallJump()
