@@ -17,6 +17,7 @@ public class Grappler : MonoBehaviour
     public float grapplingSpeed;
     public float lerpDuration;
     public float grappleLaunchForce;
+    private int lineRendererIndex = 1;
 
     private Vector3 grapplePoint;
     private float startTime;
@@ -104,7 +105,7 @@ public class Grappler : MonoBehaviour
         if (lineRenderer != null)
         {
             lineRenderer.enabled = true;
-            lineRenderer.SetPosition(1, grapplePoint);
+            lineRenderer.SetPosition(lineRendererIndex, grapplePoint);
         }       
     }
 

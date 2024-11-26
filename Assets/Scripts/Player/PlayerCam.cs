@@ -5,6 +5,8 @@ public class PlayerCam : MonoBehaviour
     public float sensX;
     public float sensY;
 
+    public float sensMultiplyer = 10;
+
     public Transform orientation;
 
     [SerializeField] WallRunning wallRunningScript;
@@ -15,6 +17,7 @@ public class PlayerCam : MonoBehaviour
     public float tiltAngle;
     public float tiltSpeed;
     private float currentTilt;
+    public float rotationClamp = 90;
 
     Vector2 mouse;
 
@@ -46,7 +49,7 @@ public class PlayerCam : MonoBehaviour
         yRotation += mouse.x;
         xRotation -= mouse.y;
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -rotationClamp, rotationClamp);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, WallRunTilt());
         orientation.rotation = Quaternion.Euler(0, yRotation, WallRunTilt());
@@ -56,13 +59,13 @@ public class PlayerCam : MonoBehaviour
     {
         if (InputReader.isUsingController)
         {
-            sensX /= 10;
-            sensY /= 10;
+            sensX /= sensMultiplyer;
+            sensY /= sensMultiplyer;
         }
         else
         {
-            sensX *= 10;
-            sensY *= 10;
+            sensX *= sensMultiplyer;
+            sensY *= sensMultiplyer;
         }
     }
 

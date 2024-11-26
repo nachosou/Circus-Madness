@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody projectileRB;
     public float speed;
 
+    private float restoreDragTime = 0.1f;
+
     [SerializeField] private string playerTagName = "Player";
 
     private void Start()
@@ -71,6 +73,6 @@ public class Projectile : MonoBehaviour
     private IEnumerator RestoreDrag(PlayerMovement playerMovement, float originalDrag)
     {       
         playerMovement.playerData.groundDrag = originalDrag;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(restoreDragTime);
     }
 }

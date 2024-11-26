@@ -3,9 +3,14 @@ using UnityEngine.UI;
 
 public class TutorialCanvasHandler : MonoBehaviour
 {
-    [SerializeField] private Image[] images = new Image[3]; 
+    static public int imagesCuantity = 3;
+
+    [SerializeField] private Image[] images = new Image[imagesCuantity]; 
     [SerializeField] private Image displayImage; 
     [SerializeField] private GameObject tutorialCanvas;
+
+    public float lastImageIndex = 2;
+    public float firstImageIndex = 0;
 
     private int currentIndex = 0;
 
@@ -19,7 +24,7 @@ public class TutorialCanvasHandler : MonoBehaviour
 
     public void GoToNextImage()
     {
-        if (currentIndex < 2)
+        if (currentIndex < lastImageIndex)
         {
             currentIndex++;
             UpdateDisplayedImage();
@@ -32,7 +37,7 @@ public class TutorialCanvasHandler : MonoBehaviour
 
     public void GoToPrevImage()
     {
-        if (currentIndex > 0)
+        if (currentIndex > firstImageIndex)
         {
             currentIndex--;
             UpdateDisplayedImage();

@@ -54,7 +54,7 @@ public class ShootingEnemy : MonoBehaviour
 
     private void Shoot()
     {
-        if (shootTimer <= 0.0f)
+        if (shootTimer <= 0f)
         {
             ShootAction(); 
             shootTimer = shootCoolDown;

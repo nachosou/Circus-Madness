@@ -5334,6 +5334,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4464339695115296807, guid: 8adf74b4248765a418a4e0b3dc170c51, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1435163965}
     - target: {fileID: 5336364266624951673, guid: 8adf74b4248765a418a4e0b3dc170c51, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2923965
@@ -9192,6 +9196,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4464339695115296807, guid: 8adf74b4248765a418a4e0b3dc170c51, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1435163965}
     - target: {fileID: 5336364266624951673, guid: 8adf74b4248765a418a4e0b3dc170c51, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2923965
@@ -20434,11 +20442,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1546622340686137496, guid: e058aa27db338684595e9b541044a5b6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1435163965}
     - target: {fileID: 1919007204254362016, guid: e058aa27db338684595e9b541044a5b6, type: 3}
       propertyPath: m_Name
       value: CircusTent
       objectReference: {fileID: 0}
     - target: {fileID: 2013841541499629845, guid: e058aa27db338684595e9b541044a5b6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1435163965}
+    - target: {fileID: 4147141909474984018, guid: e058aa27db338684595e9b541044a5b6, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1435163965}
@@ -20495,6 +20511,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7395306787014381277, guid: e058aa27db338684595e9b541044a5b6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1435163965}
+    - target: {fileID: 7504482086485653328, guid: e058aa27db338684595e9b541044a5b6, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1435163965}

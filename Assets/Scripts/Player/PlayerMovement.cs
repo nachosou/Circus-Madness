@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private float grapplingRaycastDistance = 0.2f;
     public Vector3 offSet;
 
+    private float getGroundNormalMaxDistance = 1.1f;
+
     public Transform orientation;
     private Vector2 inputDir;
     Vector3 moveDirection;
@@ -81,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        IsPlayerMoving = inputDir.magnitude > 0.1f;
+        IsPlayerMoving = inputDir.magnitude > 0f;
 
         if (IsPlayerMoving && IsPlayerOnGround)
         {
@@ -132,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetGroundNormal()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.1f, Ground))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, getGroundNormalMaxDistance, Ground))
         {
             return hit.normal;  
         }

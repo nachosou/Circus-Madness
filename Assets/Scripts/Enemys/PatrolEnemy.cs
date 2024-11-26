@@ -41,7 +41,7 @@ public class PatrolEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         for (int i = 0; i < patrolPoints.Count; i++)
         {
-            Gizmos.DrawSphere(patrolPoints[i].position, 0.2f);
+            Gizmos.DrawSphere(patrolPoints[i].position, reachDistance);
 
             if (i < patrolPoints.Count - 1)
             {

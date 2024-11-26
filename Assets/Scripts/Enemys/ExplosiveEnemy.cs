@@ -14,6 +14,7 @@ public class ExplosiveEnemy : MonoBehaviour
     public float startExplosionDistance;
 
     public float explosionForce;
+    private float explosionForceMultiplyer = 10;
     public float explosionRadius;
     public float damage;
     public float waitForExplosionTime;
@@ -21,6 +22,8 @@ public class ExplosiveEnemy : MonoBehaviour
     private bool hasToExplode;
     private bool isExploding;
     private bool isAttacking;
+
+    private float conffetiAngle = -90;
 
     public AK.Wwise.Event wwiseEvent;
 
@@ -103,11 +106,7 @@ public class ExplosiveEnemy : MonoBehaviour
             Rigidbody rb = hitCollider.GetComponentInParent<Rigidbody>();
             if (rb != null)
             {
-                rb.mass = 1f;
-                rb.drag = 0f;
-                rb.angularDrag = 0.05f;
-
-                rb.AddExplosionForce(explosionForce * 10, transform.position, explosionRadius);
+                rb.AddExplosionForce(explosionForce * explosionForceMultiplyer, transform.position, explosionRadius);
             }
 
             HealthSystem playerHealth = hitCollider.GetComponentInParent<HealthSystem>();
@@ -117,7 +116,7 @@ public class ExplosiveEnemy : MonoBehaviour
             }
         }
 
-        Instantiate(confetti, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+        Instantiate(confetti, transform.position, Quaternion.Euler(new Vector3(conffetiAngle, 0, 0)));
         wwiseEvent.Post(gameObject);
         Destroy(gameObject);
     }

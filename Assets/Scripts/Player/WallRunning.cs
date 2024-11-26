@@ -167,10 +167,6 @@ public class WallRunning : MonoBehaviour
         forceToApply.x = Mathf.Clamp(forceToApply.x, walljumpSideForce, maximumSideForce);
         forceToApply.y = Mathf.Clamp(forceToApply.y, walljumpUpForce, maximumUpForce);
 
-        Debug.DrawRay(transform.position, sideForce, Color.green, 2f);
-        Debug.DrawRay(transform.position, forceToApply, Color.blue, 2f);
-        Debug.DrawRay(transform.position, new Vector3(0, walljumpUpForce, 0), Color.blue, 2f);
-
         rb.AddForce(forceToApply, ForceMode.Impulse);
     }
 
