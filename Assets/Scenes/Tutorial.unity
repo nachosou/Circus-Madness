@@ -2334,6 +2334,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6825891213427713325, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.x
+      value: 0.0001698304
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825891213427713325, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.z
+      value: -0.009294867
+      objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: inputReader
       value: 
@@ -2348,7 +2356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpUpForce
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: walljumpSideForce
@@ -2356,15 +2364,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.86
+      value: -93.81
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.68
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.41
+      value: -8.13
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalRotation.w

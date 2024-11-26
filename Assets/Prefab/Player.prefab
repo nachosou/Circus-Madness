@@ -116,7 +116,7 @@ MonoBehaviour:
   wallrunForce: 350
   maxWallrunTime: 10
   isPlayerWallRunning: 0
-  walljumpUpForce: 50
+  walljumpUpForce: 20
   walljumpSideForce: 14
   wallCheckDistance: 1
   minJumpHeight: 0.3

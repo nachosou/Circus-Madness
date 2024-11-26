@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9812441db6d19a4f816c93106ef3483, type: 3}
   m_Name: PlayerDataLevel1
   m_EditorClassIdentifier: 
-  moveSpeed: 18
+  moveSpeed: 25
   groundDrag: 5
   airDrag: 2
   jumpForce: 34

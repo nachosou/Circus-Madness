@@ -20,6 +20,7 @@ public class WallRunning : MonoBehaviour
     private RaycastHit rightWallhit;
     public bool isRunningInLeftWall;
     public bool isRunningInRightWall;
+    private bool hasPlayerWallJump;
 
     [SerializeField] private Transform orientation;
     private float inputDir;
@@ -86,9 +87,9 @@ public class WallRunning : MonoBehaviour
     {
         if ((isRunningInLeftWall || isRunningInRightWall) && inputDir > 0 && HighEnough())
         {
-            if (!isPlayerWallRunning) 
+            if (!isPlayerWallRunning && !hasPlayerWallJump) 
             { 
-                StartWallrun();               
+                StartWallrun();
             }
         }
         else
@@ -117,6 +118,7 @@ public class WallRunning : MonoBehaviour
     {
         isPlayerWallRunning = true;
         rb.useGravity = false;
+        hasPlayerWallJump = false;
     }
 
     private void StopWallrun()
@@ -124,6 +126,7 @@ public class WallRunning : MonoBehaviour
         isPlayerWallRunning = false;
         rb.useGravity = true;
         isOnCoolDown = true;
+        hasPlayerWallJump = false;
 
         if (coolDownCoroutine != null)
         {
@@ -135,6 +138,9 @@ public class WallRunning : MonoBehaviour
 
     private void WallrunMovement()
     {
+        if (hasPlayerWallJump)
+            return;
+
         rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
 
         Vector3 wallNormal = isRunningInRightWall ? rightWallhit.normal : leftWallhit.normal;
@@ -151,23 +157,20 @@ public class WallRunning : MonoBehaviour
 
     private void WallJump()
     {
-        isPlayerWallRunning = false;
+        hasPlayerWallJump = true;
 
         Vector3 sideForce = (isRunningInRightWall ? -orientation.right : orientation.right) * walljumpSideForce;
-        sideForce.y = 0f; // Asegurar que no haya fuerza vertical en el lado
+        sideForce.y = 0f;
 
-        // Fuerza total (sin normalizar)
         Vector3 forceToApply = (transform.up * walljumpUpForce) + sideForce;
 
         forceToApply.x = Mathf.Clamp(forceToApply.x, walljumpSideForce, maximumSideForce);
         forceToApply.y = Mathf.Clamp(forceToApply.y, walljumpUpForce, maximumUpForce);
 
-        // Debug para visualizar las fuerzas
         Debug.DrawRay(transform.position, sideForce, Color.green, 2f);
         Debug.DrawRay(transform.position, forceToApply, Color.blue, 2f);
         Debug.DrawRay(transform.position, new Vector3(0, walljumpUpForce, 0), Color.blue, 2f);
 
-        // Aplicar la fuerza
         rb.AddForce(forceToApply, ForceMode.Impulse);
     }
 

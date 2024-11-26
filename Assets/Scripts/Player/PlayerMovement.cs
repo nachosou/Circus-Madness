@@ -1,6 +1,8 @@
 using UnityEngine;
 using AK.Wwise;
 using UnityEngine.Rendering;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {   

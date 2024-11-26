@@ -2111,8 +2111,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 736058062}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
-      propertyPath: coolDownTime
-      value: 0.25
+      propertyPath: walljumpUpForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7728104518583902145, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: m_LocalPosition.x
