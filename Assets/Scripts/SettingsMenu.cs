@@ -36,7 +36,7 @@ public class SettingsMenu : MonoBehaviour
         List<string> resolutionOptions = new List<string>();
         int actualResolution = 0;
 
-        for (int i = 0; i < resolutions.Length; i++) 
+        for (int i = resolutions.Length - 1; i >= 0; i--) 
         { 
             string option = resolutions[i].width + " x " + resolutions[i].height;
             resolutionOptions.Add(option);
