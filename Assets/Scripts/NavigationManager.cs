@@ -46,6 +46,7 @@ public class NavigationManager : MonoBehaviour
 
         if(isActive) 
         {
+            Time.timeScale = 1.0f;
             Scene activeScene = SceneManager.GetSceneByName(sceneName);
 
             SceneManager.SetActiveScene(activeScene);   

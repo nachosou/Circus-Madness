@@ -78,9 +78,6 @@ public class PauseManager : MonoBehaviour
         NavigationManager.Instance?.UnloadScene(levelController.thisLevelName);
         NavigationManager.Instance?.LoadScene(levelController.thisLevelName, true);
 
-        Scene activeScene = SceneManager.GetSceneByName(levelController.thisLevelName);
-        SceneManager.SetActiveScene(activeScene);
-
         ResumeGame();
     }
 
