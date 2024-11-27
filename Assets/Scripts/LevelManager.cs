@@ -7,7 +7,7 @@ public class LevelController : MonoBehaviour
     public string nextLevelName;
 
     [SerializeField] private HealthSystem playerHealth;
-    [SerializeField] private LoseHandler loseHandler;
+    [SerializeField] private DeathEventSO deathEventData;
 
     private void Update()
     {
@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
     {
         if (playerHealth.health <= 0)
         {
-            loseHandler.hasPlayerDied = true;
+            deathEventData.OnPlayerDeath?.Invoke();
         }
     }
 }

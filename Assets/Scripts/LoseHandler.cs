@@ -5,23 +5,23 @@ public class LoseHandler : MonoBehaviour
 {
     [SerializeField] private LevelController levelController;
     [SerializeField] private GameObject loseCanvas;
+    [SerializeField] private DeathEventSO deathEventData;
 
     [SerializeField] private string mainMenuScene = "MainMenu";
-
-    public bool hasPlayerDied;
 
     private void Start()
     {
         loseCanvas.SetActive(false);
-        hasPlayerDied = false;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (hasPlayerDied) 
-        {
-            ActivateLoseCanvas();
-        }
+        deathEventData.OnPlayerDeath += ActivateLoseCanvas;
+    }
+
+    private void OnDisable()
+    {
+        deathEventData.OnPlayerDeath -= ActivateLoseCanvas;
     }
 
     private void ActivateLoseCanvas()
@@ -36,7 +36,6 @@ public class LoseHandler : MonoBehaviour
     {
         NavigationManager.Instance?.UnloadScene(levelController.thisLevelName);
         NavigationManager.Instance?.LoadScene(mainMenuScene);
-        hasPlayerDied = false;
     }
 
     public void ResetLevel()

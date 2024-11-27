@@ -751,6 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   playerTagName: Player
+  damage: 200
 --- !u!1001 &102723935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1974,6 +1975,10 @@ PrefabInstance:
     - target: {fileID: 4678739540220423620, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: speed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678739540220423620, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
+      propertyPath: damage
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8670141307853328220, guid: e79d0a3d4eba20a4aac1936e9b5d1788, type: 3}
       propertyPath: m_LocalScale.x
@@ -3679,7 +3684,7 @@ MonoBehaviour:
   thisLevelName: Tutorial
   nextLevelName: Lvl1
   playerHealth: {fileID: 2043342736}
-  loseHandler: {fileID: 1889512519}
+  deathEventData: {fileID: 11400000, guid: 01412fb2fe0383445b515577a49da44f, type: 2}
 --- !u!4 &1063960829
 Transform:
   m_ObjectHideFlags: 0
@@ -8610,6 +8615,10 @@ PrefabInstance:
       propertyPath: loseCanvas
       value: 
       objectReference: {fileID: 2021978207}
+    - target: {fileID: 530041439336703508, guid: c2496314e14fa0c41a1559828adfd0f2, type: 3}
+      propertyPath: deathEventData
+      value: 
+      objectReference: {fileID: 11400000, guid: 01412fb2fe0383445b515577a49da44f, type: 2}
     - target: {fileID: 530041439336703508, guid: c2496314e14fa0c41a1559828adfd0f2, type: 3}
       propertyPath: levelController
       value: 

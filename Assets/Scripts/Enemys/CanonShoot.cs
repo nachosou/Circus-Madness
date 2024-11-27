@@ -11,12 +11,6 @@ public class CanonShoot : MonoBehaviour
     public float damage;
 
     private float shootTimer;
-    private bool isAttacking;
-
-    private void Start()
-    {
-        isAttacking = false;
-    }
 
     private void Update()
     {
@@ -40,16 +34,10 @@ public class CanonShoot : MonoBehaviour
             ShootAction();
             shootTimer = shootCoolDown;
         }
-        else
-        {
-            isAttacking = false;
-        }
     }
 
     private void ShootAction()
     {
-        isAttacking = true;
-
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
 
         Vector3 direction = (target.position - shootPoint.position).normalized * Time.deltaTime;

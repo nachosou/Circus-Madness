@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     public float speed;
 
     private float restoreDragTime = 0.1f;
+    private float destroyTimeDelay = 1.0f;
 
     [SerializeField] private string playerTagName = "Player";
 
@@ -66,7 +67,7 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, destroyTimeDelay);
         }        
     }
 

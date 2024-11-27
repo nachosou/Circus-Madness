@@ -58,7 +58,7 @@ public class WallRunning : MonoBehaviour
     private void Update()
     {
         CheckWall();
-        StateMachine();
+        WallRunStates();
     }
 
     private void FixedUpdate()
@@ -83,7 +83,7 @@ public class WallRunning : MonoBehaviour
         return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, Ground);
     }
 
-    private void StateMachine()
+    private void WallRunStates()
     {
         if ((isRunningInLeftWall || isRunningInRightWall) && inputDir > 0 && HighEnough())
         {

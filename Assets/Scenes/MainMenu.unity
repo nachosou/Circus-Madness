@@ -1585,8 +1585,17 @@ MonoBehaviour:
 
 
 
-    <b><size=56><color=#800080>and all Image Campus
-    Staff!</color></size></b>'
+    <b><size=56><color=#800080>Special thanks</color></size></b>
+
+    <color=#000000><size=50>Ignacio
+    Mosconi</size></color>
+
+    <color=#000000><size=50>Juan Ignacio Digilio</size></color>
+
+
+
+    <b><size=56><color=#800080>and
+    all Image Campus Staff!</color></size></b>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f542840a0f16c7f44b2083fe0b4a5c9a, type: 2}
   m_sharedMaterial: {fileID: -6483274778059547627, guid: f542840a0f16c7f44b2083fe0b4a5c9a, type: 2}
@@ -1821,6 +1830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53eb578f786c8a43b97c3a776888927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamepad: Gamepad
+  keyboardAndMouse: Keyboard&Mouse
 --- !u!4 &1322595621
 Transform:
   m_ObjectHideFlags: 0

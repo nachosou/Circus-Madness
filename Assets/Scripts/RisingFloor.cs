@@ -5,6 +5,8 @@ public class RisingFloor : MonoBehaviour
     public float speed;
     [SerializeField] private string playerTagName = "Player";
 
+    public float damage;
+
     private void Update()
     {
         Elevate();
@@ -23,7 +25,7 @@ public class RisingFloor : MonoBehaviour
 
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(200);
+                playerHealth.TakeDamage(damage);
             }
         }
     }
