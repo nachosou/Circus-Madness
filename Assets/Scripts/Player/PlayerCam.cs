@@ -2,24 +2,28 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
+    private float sensX;
+    private float sensY;
 
-    public float sensMultiplyer = 10;
+    public float mouseSensX;
+    public float mouseSensY;
+
+    public float gamepadSensX;
+    public float gamepadSensY;
 
     public Transform orientation;
 
     [SerializeField] WallRunning wallRunningScript;
 
-    float xRotation;
-    float yRotation;
+    private float xRotation;
+    private float yRotation;
 
     public float tiltAngle;
     public float tiltSpeed;
     private float currentTilt;
     public float rotationClamp = 90;
 
-    Vector2 mouse;
+    private Vector2 mouse;
 
     [SerializeField] private InputReader inputReader;
 
@@ -32,16 +36,21 @@ public class PlayerCam : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        sensX = mouseSensX;
+        sensY = mouseSensY;
     }
 
     private void OnEnable()
     {
         inputReader.OnMoveCamera += AttemptCameraMove;
+        inputReader.OnInputSourceChange += ChangeSensDependingOnInputSource;
     }
 
     private void OnDisable()
     {
         inputReader.OnMoveCamera -= AttemptCameraMove;
+        inputReader.OnInputSourceChange -= ChangeSensDependingOnInputSource;
     }
 
     private void Update()
@@ -55,17 +64,19 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, WallRunTilt());
     }
 
-    private void ChangeSensDependingOnInputSource()
+    private void ChangeSensDependingOnInputSource(bool isController)
     {
-        if (InputReader.isUsingController)
+        Debug.Log(isController);
+
+        if (isController)
         {
-            sensX /= sensMultiplyer;
-            sensY /= sensMultiplyer;
+            sensX = gamepadSensX;
+            sensY = gamepadSensY;       
         }
         else
         {
-            sensX *= sensMultiplyer;
-            sensY *= sensMultiplyer;
+            sensX = mouseSensX;
+            sensY = mouseSensY;
         }
     }
 

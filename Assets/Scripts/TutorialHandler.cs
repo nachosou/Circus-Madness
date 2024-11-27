@@ -3,7 +3,7 @@ using UnityEngine;
 public class TutorialHandler : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialCanvas;
-    private float tutorialCoolDown = 0.2f;
+    private float tutorialCoolDown = 0.1f;
 
     private void Start()
     {
