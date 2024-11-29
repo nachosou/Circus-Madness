@@ -344,6 +344,17 @@
                     "action": "EnterGameOnStart",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f07df093-4021-4c11-8ac8-197cae9e2569",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "EnterGameOnStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
