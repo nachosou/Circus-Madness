@@ -9338,14 +9338,6 @@ PrefabInstance:
       propertyPath: waitForExplosionTime
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2827188212131956817, guid: 0e6b3292e174ee040b9bcfe81fb00c63, type: 3}
-      propertyPath: startExplosionDistance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2827188212131956817, guid: 0e6b3292e174ee040b9bcfe81fb00c63, type: 3}
-      propertyPath: wwiseEvent.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 4f07bdd38ba10dd43b5e16ba02f39feb, type: 2}
     - target: {fileID: 3676287876752943303, guid: 0e6b3292e174ee040b9bcfe81fb00c63, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 3
@@ -9869,14 +9861,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1435163965}
-    - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
-      propertyPath: shootCoolDown
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3515957762239764152, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
-      propertyPath: wwiseEvent.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 69635e9f91be5f1428e697df71a33421, type: 2}
     - target: {fileID: 4994161663915854529, guid: a371a8b8ba3a77f4aa6c315fafe8b9d4, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 3

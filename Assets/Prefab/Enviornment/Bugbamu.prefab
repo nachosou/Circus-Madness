@@ -175,7 +175,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4bf2bcacf02759044b7bfd4d2474f150, type: 2}
@@ -428,7 +428,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a3ee385207842184380977fc17c8820c, type: 2}
@@ -803,7 +803,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a3ee385207842184380977fc17c8820c, type: 2}
@@ -929,13 +929,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   confetti: {fileID: 6266625124050035191, guid: 3c56f47cee86d9c44bcdd114ade85a43, type: 3}
-  followDistance: 30
-  followSpeed: 10
+  followDistance: 46.4
+  followSpeed: 15
   startExplosionDistance: 4
-  explosionForce: 1500
-  explosionRadius: 5
+  explosionForce: 900
+  explosionRadius: 12
   damage: 0
-  waitForExplosionTime: 2
+  waitForExplosionTime: 0.5
   wwiseEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -1455,7 +1455,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: bab9c05465d414c4eb7ac2ed774125e2, type: 2}
@@ -1704,7 +1704,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e28f1c89ece5df945b6834bfb82cce75, type: 2}
