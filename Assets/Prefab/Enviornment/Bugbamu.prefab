@@ -929,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   confetti: {fileID: 6266625124050035191, guid: 3c56f47cee86d9c44bcdd114ade85a43, type: 3}
-  followDistance: 46.4
+  followDistance: 12
   followSpeed: 15
   startExplosionDistance: 4
   explosionForce: 900
