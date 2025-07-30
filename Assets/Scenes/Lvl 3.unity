@@ -8137,6 +8137,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.964
       objectReference: {fileID: 0}
+    - target: {fileID: 6825891213427713325, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825891213427713325, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825891213427713325, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7125624004167634121, guid: 0d1058ffc1d4a814a8bc9fe758a60d27, type: 3}
       propertyPath: inputReader
       value: 
@@ -11358,7 +11370,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1356784278679234745, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.000122
+      value: -2.0001297
       objectReference: {fileID: 0}
     - target: {fileID: 1651997691437203444, guid: 6a2d73cac17bcd94aa17be1e19d989f8, type: 3}
       propertyPath: m_AnchorMax.y
