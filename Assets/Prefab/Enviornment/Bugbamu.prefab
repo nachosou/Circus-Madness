@@ -932,7 +932,7 @@ MonoBehaviour:
   followDistance: 12
   followSpeed: 15
   startExplosionDistance: 4
-  explosionForce: 900
+  explosionForce: 550
   explosionRadius: 12
   damage: 0
   waitForExplosionTime: 0.5
