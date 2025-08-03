@@ -6,8 +6,9 @@ E to start game in start scene
 CREDITS
 
 Programmer
-
 Ignacio Souza
+
+
 Artists
 
 Patricio Julian Salguero
@@ -46,4 +47,4 @@ Special Thanks
 
 Ignacio Mosconi
 Juan Ignacio Digilio
-And all Image Campus Staff!
+And all Image Campus Staff! 
